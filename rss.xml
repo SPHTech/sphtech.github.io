@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[SPHTech Blog]]></title><description><![CDATA[Our collection of adventures, learnings and thoughts!]]></description><link>https://sphtech.github.io</link><generator>RSS for Node</generator><lastBuildDate>Wed, 10 Jul 2019 15:29:58 GMT</lastBuildDate><item><title><![CDATA[XConf Review - Economics of Software Quality]]></title><description><![CDATA[Mr Martin Fowler was one of the founding members of the Agile Manifesto, author of many books including my favourite Refactoring (1st…]]></description><link>https://sphtech.github.io/xconf-economics-of-software-quality/</link><guid isPermaLink="false">https://sphtech.github.io/xconf-economics-of-software-quality/</guid><pubDate>Mon, 29 Apr 2019 12:46:00 GMT</pubDate><content:encoded>&lt;p&gt;Mr Martin Fowler was one of the founding members of the Agile Manifesto, author of many books including my favourite Refactoring (1st edition was written in Java, and the latest edition in Javascript), and a great speaker at many conferences. I learned a lot from watching his talks at the previous GOTO conferences. Hence, when I found out that he is coming to Singapore to speak at the first Singapore’s XConf, I immediately signed up for the tickets.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/69f138fdf3dbae16a117924acac2bfb7/5fd2a/IMG__0304.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 49.142857142857146%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIEAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAAB5jYJLUTA/wD/xAAZEAACAwEAAAAAAAAAAAAAAAACEgADECH/2gAIAQEAAQUCsRQEJxt//8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BV//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/AUf/xAAaEAEAAQUAAAAAAAAAAAAAAAARAAEgISJR/9oACAEBAAY/AtVmSVO2f//EABwQAAMAAQUAAAAAAAAAAAAAAAABESEQMUFxof/aAAgBAQABPyHD7lZi+jHKYmzSD4P/2gAMAwEAAgADAAAAEBzP/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAEDAQE/EKmH/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAECAQE/EIun/8QAGxABAQADAQEBAAAAAAAAAAAAAREAITFBUcH/2gAIAQEAAT8QHKs9wv01reJpUncqEjwkkOYg2liBiK6PMIaAa/c//9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Same title, different contents each time!&quot;
+        title=&quot;&quot;
+        src=&quot;/static/69f138fdf3dbae16a117924acac2bfb7/64a7b/IMG__0304.jpg&quot;
+        srcset=&quot;/static/69f138fdf3dbae16a117924acac2bfb7/57443/IMG__0304.jpg 293w,
+/static/69f138fdf3dbae16a117924acac2bfb7/bedd3/IMG__0304.jpg 585w,
+/static/69f138fdf3dbae16a117924acac2bfb7/64a7b/IMG__0304.jpg 1170w,
+/static/69f138fdf3dbae16a117924acac2bfb7/5fd2a/IMG__0304.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Same title, different contents each time!&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Mr Fowler liked to use the overarching title “Software Development in the 21st Century” for his various talks, but the contents of each of those talks would vary. This time, it consisted of 2 topics: a) Economics of Software Quality and b) Practices for an Agile Codebase.&lt;/p&gt;
+&lt;h3&gt;Economics of Software Quality&lt;/h3&gt;
+&lt;p&gt;Mr Fowler started off in a rather humorous manner, mimicking his counterpart Mr Robert C. Martin (which the fraternity called as Uncle Bob), about how absolute and loud Uncle Bob would detest when bad or buggy software was allowed to be released. It is a heinous sin to commit, and no one must do that, he would say. Mr Fowler would, however, take a more measured approach to evaluate such an issue.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/11ef82391f08bed1bed9423959a565a7/5fd2a/IMG__0307.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 43.214285714285715%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAABAv/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAEveklXCh//xAAbEAACAQUAAAAAAAAAAAAAAAABAgADEhMxQv/aAAgBAQABBQJyliYRBUVZzDv/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8Bsa//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8BjH//xAAbEAACAQUAAAAAAAAAAAAAAAAAATECECEiQf/aAAgBAQAGPwLC2FBPSu//xAAcEAEAAgEFAAAAAAAAAAAAAAABABExIVFhgaH/2gAIAQEAAT8hZWlGd40TV5JeGi0+wk57mSf/2gAMAwEAAgADAAAAEPQv/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oACAEDAQE/ENiEGX//xAAWEQEBAQAAAAAAAAAAAAAAAAAAASH/2gAIAQIBAT8Qpp//xAAdEAACAQQDAAAAAAAAAAAAAAABEQAhMaHBQWHw/9oACAEBAAE/EGoqi13dYMzkFyxBIhFGCqElMLct+WEy9T//2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Mr Fowler mimicking Uncle Bob.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/11ef82391f08bed1bed9423959a565a7/64a7b/IMG__0307.jpg&quot;
+        srcset=&quot;/static/11ef82391f08bed1bed9423959a565a7/57443/IMG__0307.jpg 293w,
+/static/11ef82391f08bed1bed9423959a565a7/bedd3/IMG__0307.jpg 585w,
+/static/11ef82391f08bed1bed9423959a565a7/64a7b/IMG__0307.jpg 1170w,
+/static/11ef82391f08bed1bed9423959a565a7/5fd2a/IMG__0307.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Mr Fowler mimicking Uncle Bob.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;He reasoned that for non technical people such as business owners, they have their set of problems to address and targets to meet. When they look at software as a product, they would view the customer facing features and the underlying software quality as items that are “tradable”. Taking 3 main points — Pleasant user interface, Few defects, Good modular architecture — as example, it would be common for business owners to draw the line and separate Good modular architecture from the other two.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2b610fb5abd2291d2f0f73bc99d065c2/5fd2a/IMG__0310.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 45.285714285714285%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAQKKea0bKj//xAAbEAACAgMBAAAAAAAAAAAAAAABAgADBBQxM//aAAgBAQABBQKw1mDXFYyWUN5r2f/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPwGxr//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/ARn/xAAaEAEAAgMBAAAAAAAAAAAAAAABABAREjFR/9oACAEBAAY/AjUx7Hm2IA8or//EABoQAAICAwAAAAAAAAAAAAAAAAERADEQIWH/2gAIAQEAAT8hQS9i4tm8tFuLLgFcrzP/2gAMAwEAAgADAAAAENDf/8QAFxEBAAMAAAAAAAAAAAAAAAAAAAERcf/aAAgBAwEBPxC6WH//xAAXEQADAQAAAAAAAAAAAAAAAAAAARFh/9oACAECAQE/EJJk0//EAB4QAAEEAQUAAAAAAAAAAAAAAAEAESExsUFhcaHB/9oACAEBAAE/EBJEiS6b21UtbICSAsxpNUEBgHiyF2DhCzyv/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Drawing the line between external and internal qualities of a software.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2b610fb5abd2291d2f0f73bc99d065c2/64a7b/IMG__0310.jpg&quot;
+        srcset=&quot;/static/2b610fb5abd2291d2f0f73bc99d065c2/57443/IMG__0310.jpg 293w,
+/static/2b610fb5abd2291d2f0f73bc99d065c2/bedd3/IMG__0310.jpg 585w,
+/static/2b610fb5abd2291d2f0f73bc99d065c2/64a7b/IMG__0310.jpg 1170w,
+/static/2b610fb5abd2291d2f0f73bc99d065c2/5fd2a/IMG__0310.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Drawing the line between external and internal qualities of a software.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Depending on the resources available, business owners would adjust that line and give what bandwidth was left after developing the features to touch up on the Internal Quality. While this approach does help to accelerate the product’s time-to-market, this momentum would be short-lived — as short as within a few weeks. Design Stamina Hypothesis, he explained with a parabolic chart, charts out how a software with no or poor architecture design would have quick growth in cumulative functionality at the beginning, but would slow down logarithmically as the time of the project stretches.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/307f909b3021bb075076d869962df0c0/5fd2a/IMG__0312.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 44.714285714285715%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAB/9oADAMBAAIQAxAAAAESyHD0bKsv/8QAGxAAAQUBAQAAAAAAAAAAAAAAAQACAwQRMkH/2gAIAQEAAQUCkLCtrCIWH4efV//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPwGxr//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/ARn/xAAbEAACAgMBAAAAAAAAAAAAAAABEQAhAhASUf/aAAgBAQAGPwILFezJLpVUCNDQ1//EABoQAAMBAAMAAAAAAAAAAAAAAAABETEQIYH/2gAIAQEAAT8hbr62kwlG00lnQi7hiPg//9oADAMBAAIAAwAAABBEP//EABcRAQADAAAAAAAAAAAAAAAAAAARQVH/2gAIAQMBAT8QvQx//8QAFxEBAAMAAAAAAAAAAAAAAAAAAAERUf/aAAgBAgEBPxB1Ov/EABwQAQACAgMBAAAAAAAAAAAAAAEAESExcbHBof/aAAgBAQABPxAcREaJBeXfOoObKtdhjKYgqqFR0xqp0+58j7Hyf//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;The 2 chart lines for Design Stamina Hypothesis.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/307f909b3021bb075076d869962df0c0/64a7b/IMG__0312.jpg&quot;
+        srcset=&quot;/static/307f909b3021bb075076d869962df0c0/57443/IMG__0312.jpg 293w,
+/static/307f909b3021bb075076d869962df0c0/bedd3/IMG__0312.jpg 585w,
+/static/307f909b3021bb075076d869962df0c0/64a7b/IMG__0312.jpg 1170w,
+/static/307f909b3021bb075076d869962df0c0/5fd2a/IMG__0312.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;The 2 chart lines for Design Stamina Hypothesis.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Software projects which took care to set up a good design architecture may have relatively lesser features at the beginning of the project. However, because it was built with proper workflows and steady foundations, it would quickly catch up and surpass the growth rate of the former project steadily.&lt;/p&gt;
+&lt;p&gt;He gave another analogy of how software development can be viewed as a bank account with existing debts. When each new feature is built on to the software, one can choose either to incur more debt on top of this principal amount, or pay off a portion of it: that choice depends on the quality of the code that implemented the feature.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cb7b1025c7567d8ecdb83d4d9573d5d7/5fd2a/IMG__0314.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 44.57142857142857%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHKehU1YQB//8QAGRAAAwADAAAAAAAAAAAAAAAAAQITABAx/9oACAEBAAEFAmKFzKd2OPzX/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAEDAQE/AbGv/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQIBAT8BJ//EABoQAAICAwAAAAAAAAAAAAAAAAEQABIRITL/2gAIAQEABj8C5qJrFmV//8QAHBABAAIBBQAAAAAAAAAAAAAAAQBBMRARUXGh/9oACAEBAAE/IRWwsCIrgVG17MEM9NP/2gAMAwEAAgADAAAAEPMv/8QAFREBAQAAAAAAAAAAAAAAAAAAECH/2gAIAQMBAT8QoP/EABgRAAIDAAAAAAAAAAAAAAAAAAABESFR/9oACAECAQE/EGoh6f/EABsQAQACAgMAAAAAAAAAAAAAAAEAETGhIUFx/9oACAEBAAE/EGUjkKYzDt9amN2W2nseE4VRQNVNCbaE/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Technical Debt: we can choose to start paying it off, or incur more interest.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/cb7b1025c7567d8ecdb83d4d9573d5d7/64a7b/IMG__0314.jpg&quot;
+        srcset=&quot;/static/cb7b1025c7567d8ecdb83d4d9573d5d7/57443/IMG__0314.jpg 293w,
+/static/cb7b1025c7567d8ecdb83d4d9573d5d7/bedd3/IMG__0314.jpg 585w,
+/static/cb7b1025c7567d8ecdb83d4d9573d5d7/64a7b/IMG__0314.jpg 1170w,
+/static/cb7b1025c7567d8ecdb83d4d9573d5d7/5fd2a/IMG__0314.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Technical Debt: we can choose to start paying it off, or incur more interest.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Therefore, Mr Fowler plotted the attitudes people would have about such technical debts on a quadrant, segmenting between Prudent or Reckless, then Deliberate or Inadvertent. On the top right quadrant (Prudent and Deliberate), he explained that generally, well-intentioned people would have such an attitude — admitting the fact that they have incurred technical debt, but have to bite the bullet and deliver the product, and mentally aware of the problems and consequences that they need to deal with later.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1d947cd95a75e00542bf33601ecf4532/5fd2a/IMG__0317.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 44.714285714285715%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAQpOUdKx4v/EABsQAAEEAwAAAAAAAAAAAAAAAAIAAQMUEzEz/9oACAEBAAEFAjcCJ6+K0al5Dtf/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8Bsa//xAAWEQEBAQAAAAAAAAAAAAAAAAABECH/2gAIAQIBAT8BHJ//xAAcEAABBAMBAAAAAAAAAAAAAAAAAQIREhAhgaH/2gAIAQEABj8CSG1QdEWNL6NOY//EABwQAAICAgMAAAAAAAAAAAAAAAEhABARMUFRsf/aAAgBAQABPyHfaMCGItVKZekLhV9Ff//aAAwDAQACAAMAAAAQF/8A/8QAFREBAQAAAAAAAAAAAAAAAAAAECH/2gAIAQMBAT8QuP/EABgRAAIDAAAAAAAAAAAAAAAAAAABESFR/9oACAECAQE/ELxD0//EAB4QAAIBAwUAAAAAAAAAAAAAAAERACExYUFRcaHw/9oACAEBAAE/EEfrOEg5uYEt6V22NSIgBQACCzCnbMt+KTbif//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;The Technical Debt Quadrant.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1d947cd95a75e00542bf33601ecf4532/64a7b/IMG__0317.jpg&quot;
+        srcset=&quot;/static/1d947cd95a75e00542bf33601ecf4532/57443/IMG__0317.jpg 293w,
+/static/1d947cd95a75e00542bf33601ecf4532/bedd3/IMG__0317.jpg 585w,
+/static/1d947cd95a75e00542bf33601ecf4532/64a7b/IMG__0317.jpg 1170w,
+/static/1d947cd95a75e00542bf33601ecf4532/5fd2a/IMG__0317.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;The Technical Debt Quadrant.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;There would also be people who are totally unaware of software development best practices and the technical debt they are incurring, hence reckless but inadvertent in nature, as they do not know what they not know. What would be more upsetting, would be people who are aware of their debt, but wilfully choose not to do anything about it, essentially being deliberately reckless about the matter.&lt;/p&gt;
+&lt;p&gt;One can only get away from the consequences of such wilful stubbornness, when the term of the project is short-lived — short enough before the Design Payoff Line intersects with the project’s velocity curve. This may apply to one-off campaign-related short projects, which one does not need to worry about maintenance.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fa29949adbe5ffe4b3ec448dd3d8b364/5fd2a/IMG__0316.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 43.28571428571429%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EABQBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAUW08RoksH//xAAbEAACAgMBAAAAAAAAAAAAAAAAAQITAwQUMf/aAAgBAQABBQJ1vLN69PTMmLxH/8QAFhEBAQEAAAAAAAAAAAAAAAAAARAh/9oACAEDAQE/AU2f/8QAFhEBAQEAAAAAAAAAAAAAAAAAARAh/9oACAECAQE/ARyf/8QAHBAAAQUAAwAAAAAAAAAAAAAAAAECERIxEFGh/9oACAEBAAY/AshvQtYsb6NF4//EABwQAAICAgMAAAAAAAAAAAAAAAERADEQIUGBof/aAAgBAQABPyEgisiBx0hu4+iXSXjwYf/aAAwDAQACAAMAAAAQBx//xAAWEQEBAQAAAAAAAAAAAAAAAAAAETH/2gAIAQMBAT8Q1K//xAAWEQEBAQAAAAAAAAAAAAAAAAAAITH/2gAIAQIBAT8QxK//xAAcEAEAAgIDAQAAAAAAAAAAAAABABEhMVFxoZH/2gAIAQEAAT8QpVNiLQxrncGXc5EGFtpxGm4ACgPgTzTz5o9z/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;The Design Payoff Line: when cutting corners in design start biting back.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/fa29949adbe5ffe4b3ec448dd3d8b364/64a7b/IMG__0316.jpg&quot;
+        srcset=&quot;/static/fa29949adbe5ffe4b3ec448dd3d8b364/57443/IMG__0316.jpg 293w,
+/static/fa29949adbe5ffe4b3ec448dd3d8b364/bedd3/IMG__0316.jpg 585w,
+/static/fa29949adbe5ffe4b3ec448dd3d8b364/64a7b/IMG__0316.jpg 1170w,
+/static/fa29949adbe5ffe4b3ec448dd3d8b364/5fd2a/IMG__0316.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;The Design Payoff Line: when cutting corners in design start biting back.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Finally, Mr Fowler summarised, when we promise clients to build software with many features but without proper design and architecture, we are ultimately stealing money from our clients: the money — both physical capital and time costs — that the client would need to pay to maintain the software in the future. As software developers, he rallied, we should upkeep our professional ethics to not cause deceit and harm to our clients and users. With that conclusion, he ended the first part of his talk.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Revitalizing our engineering - Engineering 2.0]]></title><description><![CDATA[We developed a News Tablet application for the Samsung Knox recently, and we are able to institute the various good engineering practices…]]></description><link>https://sphtech.github.io/revitalizing-our-engineering/</link><guid isPermaLink="false">https://sphtech.github.io/revitalizing-our-engineering/</guid><pubDate>Tue, 12 Mar 2019 14:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We developed a News Tablet application for the Samsung Knox recently, and we are able to institute the various good engineering practices into our workflow process. Read on to find out more!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;For quite some time now, we have visited Govtech who showed us their engineering quarters, and we have attended conferences, and read articles which advocated good engineering practices. While we do agree and recognize its benefits, adopting them require much time, resources and proper planning.&lt;/p&gt;
+&lt;p&gt;It is with the recent development of the News Tablet application for the Samsung Knox, that we are able to institute the various good engineering practices into our engineering workflow.&lt;/p&gt;
+&lt;p&gt;As a quick introduction, the News Tablet application is a collaboration between SPH and Samsung, to produce a mobile application exclusively for the Samsung Knox, that allows users to read the various SPH publications’ e-paper on the device.&lt;/p&gt;
+&lt;h3&gt;Our engineering workflow&lt;/h3&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bfce4012b1552150755589e7f21a1f81/22e61/workflow-disgram.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 33.4375%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsSAAALEgHS3X78AAABVUlEQVQY05WQO0vDUBzF82H8Bg4uDuqqH0FwqoMgOFgEI7gILmLB+gCFQhUFiy2lg4Ja6qvtUGgr6UNJW9JX+khvwm2b3CQ3N9eUooOD4JkO5/8/w/kxmqbRf8q27bFhGnzFqLT0WsdoyeizYYgAQigriqZAQ2g7udmW9bJo1CWzBVBJxBIk1Or0Bd1UmdJRKDuxlJ9dLy97uMmVD9de4Drgu7p4OjznZ9zF+U1+cbcw5y4ubJVd+/npNWHjTBqAYGqn0Hxh+hle9Nx0/fcgkhBYXzf0yuW4VCYtpN47p7dN350SjtdPwtJltBdONI4j8kMaYZTkg9Uex6iGCQa6SinMluJTqyCaRZQ0a3VnEhgiqGNM6ePbsyhLyLTBUEcW+RnPVAXBMjCxKap1+W3/oFB1jpqqjsBYZMzGe+DNcdw4od+0RmVCyN9UMcYsy8ZiMcf/ev4CLdNvhl8DHTwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;We have a executable build for every commit in main branches.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/bfce4012b1552150755589e7f21a1f81/1c968/workflow-disgram.png&quot;
+        srcset=&quot;/static/bfce4012b1552150755589e7f21a1f81/eb41c/workflow-disgram.png 293w,
+/static/bfce4012b1552150755589e7f21a1f81/7110a/workflow-disgram.png 585w,
+/static/bfce4012b1552150755589e7f21a1f81/1c968/workflow-disgram.png 1170w,
+/static/bfce4012b1552150755589e7f21a1f81/22e61/workflow-disgram.png 1600w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;We have a executable build for every commit in main branches.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;We employ Bitrise (many thanks to our QA engineers who did various product studies and recommended this tool) as the central orchestrator to perform Code Linting, calling up Codecov to execute Unit Tests, perform a test to build the app, initiate a Code Review session on Github, and after completing the review, generate a release build for the app store. It essentially serves as the main conveyor belt that carries our code from our hands into the end product.&lt;/p&gt;
+&lt;p&gt;Quite a number of processes isn’t it? Let us observe some of the salient processes in detail.&lt;/p&gt;
+&lt;h4&gt;1. Code Linting&lt;/h4&gt;
+&lt;p&gt;Back in our school days when we needed to do projects, each team member would work on different parts of it — some would compile and analyse the statistics, some would write the introduction, the findings and conclusion — and on nearing the submission date, discovered that there were various spelling or grammatical errors (that MS Word could not detect, or the team member blatantly ignore), and some parts of the facts or data were wrong. There would be the team leader, who would do the final rounds of checking and correcting of these errors. It was a very manual process.&lt;/p&gt;
+&lt;p&gt;In our context, to make sure our codes do not have “grammar” errors, we employ code linters to do the checks. Whenever one of us puts in new codes or changed existing ones, the linters would run and analyse these codes. Should there ever be any “grammar” errors, it would alert the team member, and stop carrying the code into the next step. As such, each team member is responsible for writing “grammatically correct” codes right at the beginning of the workflow, instead of deferring it until the later QC/QA stage.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6f84dc758527d0f30ad1b38298c35857/787b5/pass-linting.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 727px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 17.881705639614857%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAmElEQVQY04XOQQ7CIBAFUA5krQVt4sLGUilh00SBtsREE7X3P8IXlBpl4+JlJn8IM4S1FpvWoZTO1xFl7NdiwIqbHwW3L2n+URuQSjvw4wPCTqhPNzTmDtFP2HUXsEMP+oVFNM398nBAmJHc/8zkgEwZLKR+UxqZ0Mj3/y29cPVWnVF1V5BwatgQNhWNjWLPE/M8yal/P3sCLLaP/N6aQXwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;An example of new codes that have passed linting.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6f84dc758527d0f30ad1b38298c35857/787b5/pass-linting.png&quot;
+        srcset=&quot;/static/6f84dc758527d0f30ad1b38298c35857/eb41c/pass-linting.png 293w,
+/static/6f84dc758527d0f30ad1b38298c35857/7110a/pass-linting.png 585w,
+/static/6f84dc758527d0f30ad1b38298c35857/787b5/pass-linting.png 727w&quot;
+        sizes=&quot;(max-width: 727px) 100vw, 727px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;An example of new codes that have passed linting.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/65c8bb35e0a7f2e5c0c3c5900e6fad55/02bf6/fail-linting.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 22.033898305084744%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAA60lEQVQY01WQK08FMRCF9zehUfwNEhy5BoG4ILAIcCgsDgJBEAyCxxUYbjBIEiAhARSE181uuzvt9GOmjqYnp9OZOWfaJi9uontnKKCzllIgfr4QnyaUtyn6evMP+fmacHdLeHwgqTIMA33fV6SUaMrcMmztwyAm8I6vn/tzvo+WYLJOuRyDoVyswdUYPR3xsb3B1+EBYrWh62jbtsJFm7KwStk9IVnSHSSJcTZ3yDZtyooY1M7Oydh2hdqEIlL7HB43Or9C2TkmWkH3OyOGSAihumUTcI4x2leU+jyRocp5nHOmswk97z1+9wfSLigUMguUIQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;An example of new codes that have failed linting from the Bitrise dashboard.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/65c8bb35e0a7f2e5c0c3c5900e6fad55/02bf6/fail-linting.png&quot;
+        srcset=&quot;/static/65c8bb35e0a7f2e5c0c3c5900e6fad55/eb41c/fail-linting.png 293w,
+/static/65c8bb35e0a7f2e5c0c3c5900e6fad55/7110a/fail-linting.png 585w,
+/static/65c8bb35e0a7f2e5c0c3c5900e6fad55/02bf6/fail-linting.png 590w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;An example of new codes that have failed linting from the Bitrise dashboard.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fcd8e07e79b91b88ac2b6134eb21083c/22e61/fail-linting-details.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 50.6875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAABKklEQVQoz32R63KCMBCF8z4VreAFTJBLREQqhMpFiC31/V+iJ1FHfzDMfJPZTWZ3z9kQe9/SRDpxh2DJ66krJpvMoJnB8ikT4xCaXn1xc79+7aRDzNIf+9Ato+bTP0+YMNDLVecgxOK1k8hVdFnvL/ps13GLeMEri1dmWC54DebBeaB4HpQY6xykGVbTrdAUYKZRgfetb4Ym3wuUPCY+aKbJNdmE5SOoYtjbnvpNIu24tQ+gWyn9DVI8LXa1gtdWWJlBCXVI4RSO5v4Znit6vHqn3s//NDfU4xLFcATNmuLuRbsoHqlbEGzV0BrUqRDG08jDufeqmW1fXQDBBGx7c5QYiN9CjLFWCIUlNqxFIlWbvwe4t54fQVjcRWnvxZLuGsob9B7f0/vC/gH9OZpsQ0W3IwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;The linter would point out which parts of the codes failed, along with suggestions on how to correct it.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/fcd8e07e79b91b88ac2b6134eb21083c/1c968/fail-linting-details.png&quot;
+        srcset=&quot;/static/fcd8e07e79b91b88ac2b6134eb21083c/eb41c/fail-linting-details.png 293w,
+/static/fcd8e07e79b91b88ac2b6134eb21083c/7110a/fail-linting-details.png 585w,
+/static/fcd8e07e79b91b88ac2b6134eb21083c/1c968/fail-linting-details.png 1170w,
+/static/fcd8e07e79b91b88ac2b6134eb21083c/22e61/fail-linting-details.png 1600w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;The linter would point out which parts of the codes failed, along with suggestions on how to correct it.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;Unit Testing&lt;/h4&gt;
+&lt;p&gt;We remember when we were tackling long story problem sums, where each statement would entail us drawing some model diagram and doing some math calculation: while we have generally used the correct steps in solving the problem, we were waylaid by a careless mistake in our calculation in one of the steps (e.g. forgot to include the remainder of a long division), that led to an incorrect final answer. Our teachers would always sigh and remind us to always “check our answers again”.&lt;/p&gt;
+&lt;p&gt;Unit tests, in this sense, help us to be sure that our individual problem solving steps always give us the correct and expected answers. We would also wish to highlight that unit tests zooms in on the smaller (or even smallest) units of our code base, essentially testing the individual functions by itself. Hence, when one of us writes new codes, the new codes should have accompanying unit tests to prove its integrity.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2c54f5b0dc2a426b01e7e5e986b92258/f4e82/happy-path.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 948px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 20.675105485232066%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAvklEQVQY023OSXKDMBCFYY5jJBCYSbQGJLApV+5/oD8K9iKVyuKr7rfooZp7zeEXoqzkwtvSu5nNW6KfcetAjjNBRpwdCOuInTpkfltG89HRGkOllCL5zLE9eKaTIz1JKZP3AxFhmoZSLbYcskthLX3f0ZnmYlr90aC1fi8U8eWbjJfIujokRFzYEB+4j3eM6VBKc7vdipq6Vlf+mf2rapoG5yNn/uKML2JIhLST9vLp/mCyE23bXtf/VZb8zt/g84BSB1ZKtQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;An example of “happy path” (i.e. default scenario with no exception or error conditions) test case, which verifies that the intended functionality works.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2c54f5b0dc2a426b01e7e5e986b92258/f4e82/happy-path.png&quot;
+        srcset=&quot;/static/2c54f5b0dc2a426b01e7e5e986b92258/eb41c/happy-path.png 293w,
+/static/2c54f5b0dc2a426b01e7e5e986b92258/7110a/happy-path.png 585w,
+/static/2c54f5b0dc2a426b01e7e5e986b92258/f4e82/happy-path.png 948w&quot;
+        sizes=&quot;(max-width: 948px) 100vw, 948px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;An example of “happy path” (i.e. default scenario with no exception or error conditions) test case, which verifies that the intended functionality works.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/179b2bd29e4a7e35a4856a91e5f443cb/f4e82/unhappy-path.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 948px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 18.354430379746837%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAqklEQVQY022N/Q6CIBTFfR0QEFHELBURs7be/3VOV7Taqj9+Ox/3bDcbmgKtLdFZjd6ZpF2z42q61QoXR9kWOBEd7V2lkt/6ljbNkU2pkY3tiNhHBD8jTgv84DGMI+blCmMMpODQSqDYkLuqQ3Uhk0+ZkEIg8+eINTwQrndMcUWYbwk/rxBSgTEGxvkPPJG//UszXZaoagtT1agIaxrC0TeZBnme/+HTf2+eQdd+6id2N1sAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;An example of “unhappy path” test case, very valuable, but sadly quite often not taken into consideration by developers during crunch time.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/179b2bd29e4a7e35a4856a91e5f443cb/f4e82/unhappy-path.png&quot;
+        srcset=&quot;/static/179b2bd29e4a7e35a4856a91e5f443cb/eb41c/unhappy-path.png 293w,
+/static/179b2bd29e4a7e35a4856a91e5f443cb/7110a/unhappy-path.png 585w,
+/static/179b2bd29e4a7e35a4856a91e5f443cb/f4e82/unhappy-path.png 948w&quot;
+        sizes=&quot;(max-width: 948px) 100vw, 948px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;An example of “unhappy path” test case, very valuable, but sadly quite often not taken into consideration by developers during crunch time.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Codecov — the tool we use to execute unit tests — is also helpful to indicate areas of our codes where we need to write tests. The coverage report visibly shows code changes covered by unit tests. Hits and misses are shown on the left-most side, in darker green and red colors respectively.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2db65ff6ddf94bd75a9f1c806882bdce/b38ff/codecov-details.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1130px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 58.23008849557522%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAABgElEQVQoz42Ti26rMAyGef8H3Fb19LJCuOYCBQoBkn+OKdUqVetR9Ml2fFXA0bXtYe2CeQHs5DARzgOecBsOWP6DefGI2l5hnK5oOwljctRNgeZa4tpKdL1GdzPoB8Mx72kRZX0CPVdI2xiHfIdTtcdZHpDU34xoLsg7wTF6kUS16i+oZ4XIaw2YGjQavFKwQmCIE7iqonsDLyVcSXqIY8wa/wLfNIgWJeG1euDInosc3fmE9nRE/31mhiTGIKiRDI30U84jtzaI3L3gFhQkyGFTgVt8gc1STHmGuSy42MYj5w62gjyhUXc0TxiYaMpBxBjThBBccCpzJug8lXmGC0JSdXV/G5KuKAGpVvsv1Br/BL1jVLQXqCGFHjOU9KWFPiBrzpA3wfebDP53mLFE9Dl+4eCPOOLEMthfdofdvMfH8Mn2fvnH/ndcfIwoDd2dgqajvEI2ZBC9YJm0CUsZ/r9w/N/Ujt7Qjhae9svT2njeM6w27x8e9u/7VwS/o/37AYojl92HcWLvAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;codecov details&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2db65ff6ddf94bd75a9f1c806882bdce/b38ff/codecov-details.png&quot;
+        srcset=&quot;/static/2db65ff6ddf94bd75a9f1c806882bdce/eb41c/codecov-details.png 293w,
+/static/2db65ff6ddf94bd75a9f1c806882bdce/7110a/codecov-details.png 585w,
+/static/2db65ff6ddf94bd75a9f1c806882bdce/b38ff/codecov-details.png 1130w&quot;
+        sizes=&quot;(max-width: 1130px) 100vw, 1130px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;During the initial phase when we were starting out with the project, we only covered 19% of our codes with unit tests. With our workflow in place, our tests coverage grew steadily to 41% after 3 months! Seeing the chart line ascending is very encouraging.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2e587890d44d1ec5e78b91c3b8758831/91892/codecov-progress-chart.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 915px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 64.15300546448087%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAACCUlEQVQ4y5WTyW7bMBCG9cQFWt8KFDkUueR1WqCHFjAc9NYladIEtRvHkiVbtmVtlLho/TskbTXxqaXwYShyZkjM/HS44MiyDGVZQggxwDWcQxB2TuvyuMcNz/3tmqMqBakkmrYZaLsWHXrUCYPKCzAhkTABSQm1f9d3xucUHTskfDp0gKHTHAP+JjF7dKDGfoc4mpmEBS+RshThNkScxvi3QWkoOVq6WVWjkhWauobT0mm+u8T567cYvXiFi/MLVFxBxAw8ysHWCaLHLRIvQubtEP1eYztdYXXnY30fGBv89OB+nSNZxXCarkEa7rH4MoV79UDMsb5bIrj3sSSCXwHC2cqwMZb+pwQlDueW3WKDDdmCau4UZYEsz8F1B6mWupMldaukMnAlzLrpqLRdPO49gxRSHHC0JFjBTOullBZKrGsrUjooZ2DkmOY2WEtJKdtIpazvAMU6VV1BY8v89KN6lyQnkoykYpeiQt1Q4ZvG7veWQREHBtlop9PN3vbyv4ajkwmq1fGGJ8JAr/UnSMx0y1ZVkDnVMyvBSAEVU/j07iPO3pxh9HKEyXgCp25rFHGO/Yy6NdWSIEvzkOSwul3C/+HBI/wbD+tbD8GNC/96AffbHMurR1yPv+Pzh0tM3o/hzVx7wyxOEW/2SLaxIT7YgShBsrOk+9SgY7QtsgKSnqWgm0t6738AjlbgG9xyYy0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;codecov progress chart&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2e587890d44d1ec5e78b91c3b8758831/91892/codecov-progress-chart.png&quot;
+        srcset=&quot;/static/2e587890d44d1ec5e78b91c3b8758831/eb41c/codecov-progress-chart.png 293w,
+/static/2e587890d44d1ec5e78b91c3b8758831/7110a/codecov-progress-chart.png 585w,
+/static/2e587890d44d1ec5e78b91c3b8758831/91892/codecov-progress-chart.png 915w&quot;
+        sizes=&quot;(max-width: 915px) 100vw, 915px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;Code Reviewing&lt;/h4&gt;
+&lt;p&gt;It is only after the new codes have gone through the automated steps of the workflow successfully, do we step in to conduct the manual activity of Code Review. It is also in this step where another team member is roped in to look at the new codes that the original author has written.&lt;/p&gt;
+&lt;p&gt;We take code reviews as opportunities for each of us to show our team members how we solved a particular problem or implemented a function. From this sharing, we invite constructive feedback, either to affirm our solution methodology, or to point out areas that need improvement. Hence, good coding practices are propagated to the whole team, and the whole team benefits!&lt;/p&gt;
+&lt;p&gt;At the end, after the other team member has gone through the code review and gives his/her “LGTM”, the Pull Request (PR) is approved and merged back to the dev or master branch for the application build to be generated.&lt;/p&gt;
+&lt;h3&gt;Next steps&lt;/h3&gt;
+&lt;p&gt;As mentioned earlier, it took a considerable amount of effort and time to get to where we are currently. With the workflow process in place, we would need to work on refining the individual steps in it: we plan to do more refactoring of our codes, so as to make them more maintainable and more unit testable. We are also in the process of putting in a code analysis tool to pick out code smells — potential bad coding structure or habits — so as to provide feedback to ourselves as to where we can write better, industry-accredited code.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fdc92ab97a62f8b38692afac093c2246/b8efc/sonarcloud-details.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 897px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 40.245261984392414%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABTElEQVQoz5WSW3OCMBCF+f9/q6PWKlalWscLiKABTCSEuy+nB9oHZzpOpw/f7CWTzdndWDI6IBEbXM8ryNMcKnRQyC3KW8cOtT6gzdyehv4jVbpHnR7IHm2+xb30YUWuB0Hi3R7Rwe39jrCLXRfqFEBfBPIoRisVGil7WmKYE8cQie+jzliwOsIqsgBpskZ2/USZUhGVVN3rPVRAOr9T2nQqH2iNx7zbn90LUp1gZec3iMsI/vEFIhgiDgZQYogsGeMWj1HcbF58Z4Hf1I++nqExa1jmYqPUc6q0kUsb5mqjULOeTC2oesELRP/YZ7BGYzawmvqCOFpCyTUKzZbNHnm67Sn1FhXje+Vx4N63fUbp0gawtD+AUVMk5yGkGCEJGSevqG4TbnlCO+UW/8ImE47gA1aeOFTiQCsHOVs0cs42l/wGK7bwHxw0+Q5fumlSwLPKBGAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;We are using Sonarcloud to pick out code smells.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/fdc92ab97a62f8b38692afac093c2246/b8efc/sonarcloud-details.png&quot;
+        srcset=&quot;/static/fdc92ab97a62f8b38692afac093c2246/eb41c/sonarcloud-details.png 293w,
+/static/fdc92ab97a62f8b38692afac093c2246/7110a/sonarcloud-details.png 585w,
+/static/fdc92ab97a62f8b38692afac093c2246/b8efc/sonarcloud-details.png 897w&quot;
+        sizes=&quot;(max-width: 897px) 100vw, 897px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;We are using Sonarcloud to pick out code smells.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;We would also need to reach out, assist and build confidence in other teams in our department to adopt this workflow process, by setting up the linting and application building steps. Getting these easier to achieve workflow process steps in place will help our colleagues to be more familiar with this new workflow. With the new found confidence then can more of us get started with writing unit tests, which is the trickier part.&lt;/p&gt;
+&lt;p&gt;There is definitely more to share, and also more to be done in our efforts to revitalize our engineering. We will cover more details in our future posts, so do watch this space!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[About Us]]></title><description><![CDATA[This is the beginning of an exciting era for our SPHTech team!Over here, you will get to read about our learnings and reviews of the new…]]></description><link>https://sphtech.github.io/about-us/</link><guid isPermaLink="false">https://sphtech.github.io/about-us/</guid><pubDate>Tue, 01 Jan 2019 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;This is the beginning of an exciting era for our SPHTech team!&lt;/p&gt;
+&lt;p&gt;Over here, you will get to read about our learnings and reviews of the new technologies we are playing with, the meet-ups and conferences we attend, some of the presentations that we do on a regular basis and many other great content!&lt;/p&gt;
+&lt;p&gt;We believe that the information and knowledge learned by the individual can be put to great use when they are being shared with the rest of the team. This platform serves to connect any of us who share the same interest in certain topics, to propagate and champion for the usage of new technologies, as well as to promote the adoption of technology, security and programming best practices!&lt;/p&gt;
+&lt;p&gt;May you have an enjoyable time here reading the blog articles!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[The developer's role in a successful implementation of the test automation]]></title><description><![CDATA[Rod Michael, director of global market access strategy and channels at Rockwell Automation, famously said, “If you automate a mess, you get…]]></description><link>https://sphtech.github.io/developers-role-in-test-automation/</link><guid isPermaLink="false">https://sphtech.github.io/developers-role-in-test-automation/</guid><pubDate>Thu, 06 Dec 2018 12:54:00 GMT</pubDate><content:encoded>&lt;p&gt;Rod Michael, director of global market access strategy and channels at Rockwell Automation, famously said, &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“If you automate a mess, you get an automated mess.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;A meaningful and therefore effective automated test system is created with intelligent design. It is not something that just happens.&lt;/p&gt;
+&lt;p&gt;As we all know, testing processes are important in order to deliver a bug-free application. Amplifying its impact, automated testing is beneficial in saving build validation time and effort, as well as helpful in demystifying crucial performance hurdles in the application. Eventually, this paves the way to deliver outstanding softwares.&lt;/p&gt;
+&lt;p&gt;Hence, it is crucial for a test engineer to create an effective road map and choose the right tools to build a robust test automation framework. Besides the test engineers, developers also play a vital role in the successful implementation of the automation framework.&lt;/p&gt;
+&lt;p&gt;There are several guidelines/principles available online to guide a test engineer to effectively strategise and implement the test automation framework. However, in this post, we would like to shed some light on the contribution that is required from fellow developers.&lt;/p&gt;
+&lt;p&gt;Some development practices that set the foundation to naturally drive the automation are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Make sure the app is CI/CD ready (can be deployed anywhere).&lt;/li&gt;
+&lt;li&gt;Use APIs to help automation with quick setup/cleanup.&lt;/li&gt;
+&lt;li&gt;Follow naming conventions/standards to intuitively allow automation engineers/tools to determine the element ID.&lt;/li&gt;
+&lt;li&gt;Write design documents for new features, involve at least 1 automation engineer to review the same and actively involve in test case review processes.&lt;/li&gt;
+&lt;li&gt;Have a centralise repository (that is easily accessible) to check-in/check-out development source codes.&lt;/li&gt;
+&lt;li&gt;Move towards Behavioural Driven Development (BDD) - product owner/developers to come up with the set of user stories for the feature to be developed. That would help test engineers to map it to their Cucumber feature file.&lt;/li&gt;
+&lt;li&gt;Write unit test cases to ensure the first hand validation of the feature and provide a baseline for automation engineers to improvise further.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Some of the immediate action items for developers to contribute towards effective software automation are:&lt;/p&gt;
+&lt;h3&gt;1. Always assign unique locators for page elements in a single view&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;How:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6edd066752220a341bee836a46884a85/51a3e/blog-test-automation2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 58.785714285714285%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACGUlEQVQoz4WTy2sTURjF70oX2qaG6qI+liqljTEutCtrUBRFFIrmUa2bQjcuxVgQCq2CCwUf+AfYhYKCOxFcuHPnv1GS5jFJ5nFnJjOT4z03nUmTjR8c5s6de3+c7zHiarmCfHEdl+9XsFh4hoW7T7D97Rd6nkSj2YR0XUgp4TjOiCzLgmEYqNfr6Ha7sG1b74tUpoBDswUcni2Ca3HiBl59/ApG12hDqsO+6yEIQvT7fcQRRZGW7/vwPA9hGOp98fz1J0xlyjhzZQ2nLlUgTq5h891n/dFst9Ha2YFjmogUjABCKQLonKI7vlNiIX8b6dwjBS3iyLlViJkCXrz/ooHSkTCqVVitFsaDl3u9nhZTpUuuxdncogam5kuYPl+GOH49AfKAqWCmqqXruElqdBoEgX5nynTJs3Qurt25h6nsinJYUg4VcObmCLCjit6pVeHZEp5qEAGxMwIJdtV+XFORyZeQzj7A5FwRxy6sKIdDYKAOGG0Lu7stNAwbTVMmjeHl2CHhDO3w4tK6dpZSjZnOPRwB2qaFTqOpn2HU143Z3xSC6JBKgKuVD5iYY0OWcXQM6Kqm+ExnbyTUlcQhgXEj9oPF46cvMTFf1imns8u6hlt7QLqKY+AMCZAQDvS4xI/ff3Hg9JKGDWp4C5tvB3MYhGGS4hA6BPJPGZf4/vMPDirgpE67rIEbb7b/C+SoVNWM1mo1/Yz1DyELGLxLgt9oAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;blog test automation2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6edd066752220a341bee836a46884a85/1c968/blog-test-automation2.png&quot;
+        srcset=&quot;/static/6edd066752220a341bee836a46884a85/eb41c/blog-test-automation2.png 293w,
+/static/6edd066752220a341bee836a46884a85/7110a/blog-test-automation2.png 585w,
+/static/6edd066752220a341bee836a46884a85/1c968/blog-test-automation2.png 1170w,
+/static/6edd066752220a341bee836a46884a85/51a3e/blog-test-automation2.png 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;i. As shown above, every element in application view have identifiers to locate from backend.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;For iOS apps, it is the Accessibility ID&lt;/li&gt;
+&lt;li&gt;For Android apps, it is the ID&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ii. It is always a best practice to have a unique value to such identifiers (or at least try to have it unique across the same page/view).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt; Unique locators allow better navigation.&lt;/p&gt;
+&lt;h3&gt;2. Avoid creating dynamic IDs for page elements, which keeps changing with view/session reload&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;How:&lt;/strong&gt; Dynamic IDs are worse than non-unique locators, as that serves as anti-automation practice. Use static locators (such as IDs instead of Xpath).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt; Static locators contributes to robust automation framework.&lt;/p&gt;
+&lt;h3&gt;3. Always provide a proper title to window or screen&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;How:&lt;/strong&gt; Follow standard naming conventions for element IDs and locators.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Why:&lt;/strong&gt; For automation engineers to be able to intuitively determine the element locators in future, allowing:&lt;br&gt;
+i. feature development and automation to work in parallel,&lt;br&gt;
+ii. minimal dependency and work efficiently in agile.&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Hence, the developers has the important responsibility to make object identifications easy and make application behaviour predictable. These pointers, if taken care of, will help test automation to be more efficient, and the test automation framework to be more robust. Otherwise no matter how good the test automation architecture or tool is, it can not help much and will not be effective.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Towards a Privacy Aware Smart Nation]]></title><description><![CDATA[On the 21st of November, SPH staff gathered for a cozy SPHTech Meetup session at The Inspiration Hub to learn about Data Privacy efforts in…]]></description><link>https://sphtech.github.io/towards-a-privacy-aware-smart-nation/</link><guid isPermaLink="false">https://sphtech.github.io/towards-a-privacy-aware-smart-nation/</guid><pubDate>Thu, 29 Nov 2018 12:43:00 GMT</pubDate><content:encoded>&lt;p&gt;On the 21st of November, SPH staff gathered for a cozy SPHTech Meetup session at The Inspiration Hub to learn about Data Privacy efforts in Singapore.&lt;/p&gt;
+&lt;p&gt;Professor Anthony Tung, Associate Professor at National University of Singapore (School of Computing), shared insights on moving “towards a Privacy-Aware Smart Nation”. During the session, Prof Tung introduced the newly developed N-CRiPT (NUS Centre for Research in Privacy Technologies) which aims to develop privacy-preserving technologies to protect  identities and sensitive data with greater focus on unstructured data throughout the data life cycle.&lt;/p&gt;
+&lt;p&gt;N-CRiPT is a crucial step for Singapore as R&amp;#x26;D in developing privacy-protecting systems in tandem with technology advancement will help to ensure sustained growth in moving forward as a Smart Nation. Prof Tung also shared about the prevalence of the risks involved in the world of big data we live in today, leaving a lasting impression on those present at the meetup.&lt;/p&gt;
+&lt;p&gt;This meetup session is just one of many planned by SPHTech to promote a spirit of innovation and digitisation to improve our efficiency and effectiveness in the way we work.  Do look out more more sessions to come!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Docker workshop in SPH]]></title><description><![CDATA[Containerization has been one of the most talk about topics in the digital world. It enabled a whole new paradigm shift in getting software…]]></description><link>https://sphtech.github.io/docker-workshop-in-sph/</link><guid isPermaLink="false">https://sphtech.github.io/docker-workshop-in-sph/</guid><pubDate>Tue, 27 Nov 2018 11:06:00 GMT</pubDate><content:encoded>&lt;p&gt;Containerization has been one of the most talk about topics in the digital world. It enabled a whole new paradigm shift in getting software to run reliability when moving from one environment to another.&lt;/p&gt;
+&lt;p&gt;I have the privilege to run 2 docker workshops in SPH as I managed to set up docker running zaobao.com locally on my PC. It has been an amazing experience.&lt;/p&gt;
+&lt;p&gt;The first docker workshop was held on 19th October 2018, with 23 people attending. We went through what is containerization and its difference with virtual machines. Then we have exercises on docker command, docker-compose.yml and set up a completely new drupal website from scratch. And we have great food at the end!&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/76090f8ae29d30e67b6d37e3cb3c29c2/5fd2a/IMG_9182.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 133.35714285714286%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAADAf/EABcBAQEBAQAAAAAAAAAAAAAAAAIAAQP/2gAMAwEAAhADEAAAAcmHz5pEeRPn3kk1Zf/EABwQAQACAgMBAAAAAAAAAAAAAAIAAQMSERMjMf/aAAgBAQABBQLBroOCnWNpWSdzPOpmuD7pvOxVOxSmuP/EABcRAAMBAAAAAAAAAAAAAAAAAAABEBH/2gAIAQMBAT8BRl//xAAWEQADAAAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8BNqK//8QAHxAAAQMDBQAAAAAAAAAAAAAAAAECEQMQMRIhMmHh/9oACAEBAAY/Aocm5LVNSVYkSTlZqdWkyeGT/8QAHBABAAMBAAMBAAAAAAAAAAAAAQARMSFBYZFx/9oACAEBAAE/IdSV251qepQkdDDyxeUQRo+hjejxlrRkLFXGgB4phwGMsGXvU+JmU/J//9oADAMBAAIAAwAAABAA5TL/xAAXEQADAQAAAAAAAAAAAAAAAAAAAREh/9oACAEDAQE/EEUhAqnTT//EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQIBAT8QhSIhKoYj/8QAHhABAAMAAgIDAAAAAAAAAAAAAQARITGBQVGh4fD/2gAIAQEAAT8QLKS29OAMA0xynElU+CJ58xFXzuoMlVOaBu42sJ0j4ipFMVt57j1oVYeu5telir0+qhVBMYQ7JX2/x6gQKDgAHxP/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Food! Glorious Food!&quot;
+        title=&quot;&quot;
+        src=&quot;/static/76090f8ae29d30e67b6d37e3cb3c29c2/64a7b/IMG_9182.jpg&quot;
+        srcset=&quot;/static/76090f8ae29d30e67b6d37e3cb3c29c2/57443/IMG_9182.jpg 293w,
+/static/76090f8ae29d30e67b6d37e3cb3c29c2/bedd3/IMG_9182.jpg 585w,
+/static/76090f8ae29d30e67b6d37e3cb3c29c2/64a7b/IMG_9182.jpg 1170w,
+/static/76090f8ae29d30e67b6d37e3cb3c29c2/5fd2a/IMG_9182.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Food! Glorious Food!&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;I also demonstrated that it was possible to run zaobao and zaobao.sg on the same container with the help of &lt;a href=&quot;https://traefik.io/&quot;&gt;traefik&lt;/a&gt; on localhost.&lt;/p&gt;
+&lt;p&gt;The objective of the part 1 familiarisation was to prepare for the docker workshop 2. In that workshop, we got the participants to run their actual drupal sites. Yes, actual BT, ST, BH sites on our laptops and the same docker images can be deployed to Staging and Production servers on Amazon Web Services with the help of &lt;a href=&quot;https://aws.amazon.com/ecs/&quot;&gt;ECS&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;On 2nd November 2018, I ran the second docker workshop. Before that day, I did nag the developers to get their production code and database of their drupal sites so that they can get the best value out of their workshop. On that day, they did bring their stuff, except we have an unexpected guest:&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/08d6f88e3486ef1d69d5f4439cd0bcb2/5fd2a/blackout.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 56.285714285714285%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFAv/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAGQwnsaYiRX/8QAGRAAAgMBAAAAAAAAAAAAAAAAAQIAAzES/9oACAEBAAEFAhps6IsRgYmT/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BiP/EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/AWf/xAAYEAADAQEAAAAAAAAAAAAAAAAAATERIP/aAAgBAQAGPwLSIi4//8QAGRABAAMBAQAAAAAAAAAAAAAAAQAQEUGB/9oACAEBAAE/IVh5GO0NgB5RU//aAAwDAQACAAMAAAAQky//xAAWEQEBAQAAAAAAAAAAAAAAAAABEDH/2gAIAQMBAT8QBk//xAAXEQEAAwAAAAAAAAAAAAAAAAAAASFR/9oACAECAQE/EJap/8QAGhABAQEBAQEBAAAAAAAAAAAAAREAITFRcf/aAAgBAQABPxC5IBYdeaaAKVnTn3GZbnks3l/TICM0Dw3/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Blackout!&quot;
+        title=&quot;&quot;
+        src=&quot;/static/08d6f88e3486ef1d69d5f4439cd0bcb2/64a7b/blackout.jpg&quot;
+        srcset=&quot;/static/08d6f88e3486ef1d69d5f4439cd0bcb2/57443/blackout.jpg 293w,
+/static/08d6f88e3486ef1d69d5f4439cd0bcb2/bedd3/blackout.jpg 585w,
+/static/08d6f88e3486ef1d69d5f4439cd0bcb2/64a7b/blackout.jpg 1170w,
+/static/08d6f88e3486ef1d69d5f4439cd0bcb2/5fd2a/blackout.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Blackout!&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Despite the set back, we were still able to achieve our objectives. Swee Hock was able to get ST dockerized locally and present to us all. BT and TNP were able to be dockerized as well during the workshop.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/998e77f1437fd97ec8d15510d0620527/5fd2a/IMG_0075.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAABw+jxGuRyD//EABoQAAIDAQEAAAAAAAAAAAAAAAECAAMSERP/2gAIAQEAAQUCZ74jZT1Bl1+VFhcdE//EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oACAEDAQE/AQlv/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAECAQE/AbWv/8QAHBAAAgICAwAAAAAAAAAAAAAAAAECESEiMVFS/9oACAEBAAY/AtXIuXNZLQ/QpSnSa6NJOj//xAAaEAEAAgMBAAAAAAAAAAAAAAABABEhMUFR/9oACAEBAAE/IcqNg0bQ10ESYAHjs2G8DqUxv//aAAwDAQACAAMAAAAQcw//xAAWEQEBAQAAAAAAAAAAAAAAAAARAAH/2gAIAQMBAT8Q0SDS/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERIf/aAAgBAgEBPxDJUg//xAAaEAEBAQEAAwAAAAAAAAAAAAABESEAMVGx/9oACAEBAAE/ELcCwEv3qjss4vHFMRHlcUQCMb5vYEk2kKenOnAE0yd//9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Achievement unlocked&quot;
+        title=&quot;&quot;
+        src=&quot;/static/998e77f1437fd97ec8d15510d0620527/64a7b/IMG_0075.jpg&quot;
+        srcset=&quot;/static/998e77f1437fd97ec8d15510d0620527/57443/IMG_0075.jpg 293w,
+/static/998e77f1437fd97ec8d15510d0620527/bedd3/IMG_0075.jpg 585w,
+/static/998e77f1437fd97ec8d15510d0620527/64a7b/IMG_0075.jpg 1170w,
+/static/998e77f1437fd97ec8d15510d0620527/5fd2a/IMG_0075.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Achievement unlocked&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;h3&gt;What’s next?&lt;/h3&gt;
+&lt;p&gt;We will be looking into using docker for running scripts. And we will also be looking to creating our very own Dockerfile for our various tech uses and upload the images to ECR.&lt;/p&gt;
+&lt;p&gt;Also we will be looking at how to use containerization to push the latest production database to developers without compromising security so as they have the latest data to work on.&lt;/p&gt;
+&lt;p&gt;Special thanks to Ken for coaching me on events planning, Niro and Hector for being Technical Assistants for my workshops!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Using Mockito's ArgumentCaptor on SingleLiveEvent]]></title><description><![CDATA[A  class is an observable live data that can be used to send events from ViewModel to View in Android MVVM-styled designs.This link…]]></description><link>https://sphtech.github.io/using-mockitos-argumentcaptor/</link><guid isPermaLink="false">https://sphtech.github.io/using-mockitos-argumentcaptor/</guid><pubDate>Wed, 10 Oct 2018 17:21:00 GMT</pubDate><content:encoded>&lt;p&gt;A &lt;code class=&quot;language-text&quot;&gt;SingleLiveEvent&lt;/code&gt; class is an observable live data that can be used to send events from ViewModel to View in Android MVVM-styled designs.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@trionkidnapper/issuing-commands-from-a-viewmodel-using-kotlin-sealed-classes-f1bbab7d4979&quot;&gt;This link&lt;/a&gt; describes using Kotlin’s sealed data class with a &lt;code class=&quot;language-text&quot;&gt;SingleLiveEvent&lt;/code&gt; to create such a mechanism.&lt;/p&gt;
+&lt;p&gt;I used that in one of my projects and ended up with a ViewModel that looks like this:&lt;/p&gt;
+&lt;h4&gt;ViewModel Class&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; command&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; SingleLiveEvent&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Command&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; dependencyProvider&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getCommmand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// This value will be set by other business logic&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; todayDate &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;handleButtonClick&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   todayDate&lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      command&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Command&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;LaunchNextActivity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;it&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Command Sealed Class&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;sealed&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; Command &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;LaunchNextActivity&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; dateString &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Command&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;How does it work?&lt;/h3&gt;
+&lt;p&gt;A user event will trigger this &lt;code class=&quot;language-text&quot;&gt;handleButtonClick()&lt;/code&gt; in my ViewModel class.&lt;/p&gt;
+&lt;p&gt;It must then instruct a View to launch NextActivity using a variable &lt;code class=&quot;language-text&quot;&gt;todayDate&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-text&quot;&gt;todayDate&lt;/code&gt; value is set by some other UseCase class.&lt;/p&gt;
+&lt;p&gt;I am using a simple Kotlin object class to provide dependencies, &lt;code class=&quot;language-text&quot;&gt;SingleLiveEvent&amp;lt;Command&amp;gt;&lt;/code&gt; type class being one of them.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; DependencyProvider &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getCommmand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; SingleLiveEvent&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Command&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;object&lt;/span&gt; Injector &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; DependencyProvider &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getCommmand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; SingleLiveEvent&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Command&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;SingleLiveEvent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Writing a Unit Test&lt;/h3&gt;
+&lt;p&gt;When I am writing unit test, I often find myself stuck with the question, “What to check?” I usually got out by thinking inwardly and selfishly. What is the single concern for this function?&lt;/p&gt;
+&lt;p&gt;So in this case, I am not concerned with who is observing this command event. But I am concerned about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;command&lt;/code&gt;’s value being set with &lt;code class=&quot;language-text&quot;&gt;todayDate&lt;/code&gt;, if &lt;code class=&quot;language-text&quot;&gt;todayDate&lt;/code&gt; is not null.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;command&lt;/code&gt;’s &lt;code class=&quot;language-text&quot;&gt;setValue&lt;/code&gt; is not called when &lt;code class=&quot;language-text&quot;&gt;todayDate&lt;/code&gt; is null.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let us address the first concern, which is to be able to verify that &lt;code class=&quot;language-text&quot;&gt;command&lt;/code&gt;’s &lt;code class=&quot;language-text&quot;&gt;setValue&lt;/code&gt; is being called.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token annotation builtin&quot;&gt;@Mock&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;lateinit&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; mockProvider&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; DependencyProvider
+
+&lt;span class=&quot;token annotation builtin&quot;&gt;@Mock&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;lateinit&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; mockCommand &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; SingleLiveEvent&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Command&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token annotation builtin&quot;&gt;@Before&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    MockitoAnnotations&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;initMocks&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;whenever&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockProvider&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getCommmand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;thenReturn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockCommand&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    viewModel &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;MyViewModel&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockProvider&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token annotation builtin&quot;&gt;@Test&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;handleButtonClick_whenTodayDateNotNull&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; testDate &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;2018-07-22&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;//Pretend here that some UseCase sets todayDate as testDate&lt;/span&gt;
+    viewModel&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;todayDate &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; testDate
+    viewModel&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;handleButtonClick&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;val&lt;/span&gt; argumentCaptor &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; ArgumentCaptor&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Command&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;LaunchNextActivity&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; 
+            ArgumentCaptor&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forClass&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Command&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;LaunchNextActivity&lt;span class=&quot;token operator&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;java&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  
+    &lt;span class=&quot;token function&quot;&gt;verify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockCommand&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;times&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setValue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;argumentCaptor&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;capture&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    Assert&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;testDate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;  argumentCaptor&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dateString&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Mocking Dependencies&lt;/h3&gt;
+&lt;p&gt;For us to verify &lt;code class=&quot;language-text&quot;&gt;command&lt;/code&gt;’s function is being called, we need to mock it.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token annotation builtin&quot;&gt;@Mock&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;lateinit&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; mockCommand &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; SingleLiveEvent&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Command&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We want to override the &lt;code class=&quot;language-text&quot;&gt;provideCommand()&lt;/code&gt; to get it to return &lt;code class=&quot;language-text&quot;&gt;mockCommand&lt;/code&gt;, so we need to mock our Injector as well. This &lt;code class=&quot;language-text&quot;&gt;mockProvider&lt;/code&gt; is passed into our ViewModel, see line 5.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token annotation builtin&quot;&gt;@Mock&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;lateinit&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; mockProvider&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; DependencyProvider
+&lt;span class=&quot;token operator&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;whenever&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockProvider&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getCommmand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;thenReturn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockCommand&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;All these mocks will be initialised when the following function is called.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;MockitoAnnotations&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;initMocks&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;There, we have bent the dependencies to our will, we can move on now.&lt;/p&gt;
+&lt;h3&gt;Verifying and Asserting&lt;/h3&gt;
+&lt;p&gt;Line 19. We can verify whether or not &lt;code class=&quot;language-text&quot;&gt;setValue&lt;/code&gt; is being called by specifying &lt;code class=&quot;language-text&quot;&gt;any()&lt;/code&gt;. This means we do not really care about the value of the parameter that is passed into the &lt;code class=&quot;language-text&quot;&gt;setValue&lt;/code&gt; function.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token function&quot;&gt;verify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockCommand&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;times&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setValue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So to check that it is not called,&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token function&quot;&gt;verify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockCommand&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;times&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setValue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;However, we ARE concerned that the correct value is being used for &lt;code class=&quot;language-text&quot;&gt;setValue()&lt;/code&gt;. Mockito’s ArgumentCaptor class do that.&lt;/p&gt;
+&lt;p&gt;They allow you to capture the variable that is being passed as an argument, for the function that you are verifying.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;kotlin&quot;&gt;&lt;pre class=&quot;language-kotlin&quot;&gt;&lt;code class=&quot;language-kotlin&quot;&gt;&lt;span class=&quot;token function&quot;&gt;verify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mockCommand&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;times&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setValue&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;argumentCaptor&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;capture&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+Assert&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;assertEquals&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;testDate&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; argumentCaptor&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;dateString&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After capturing, we can then perform simple assertions on the captured value.&lt;/p&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;p&gt;Kotlin’s sealed class can be used effectively to send events with parameters to View classes, from ViewModels.&lt;/p&gt;
+&lt;p&gt;These sealed classes are wrapped with &lt;code class=&quot;language-text&quot;&gt;SingleLiveEvent&lt;/code&gt; live data classes, so Views can create observers to observe changes in value.&lt;/p&gt;
+&lt;p&gt;We can use Mockito’s ArgumentCaptors to capture what is being used to set these live data, thereby verifying the correctness of the function.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Original post by Boon Keat at &lt;a href=&quot;https://medium.com/@bkteoz/using-mockitos-argumentcaptor-on-singleliveevent-8c1aa1fadfbd&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to get your mobile app users to give you ratings and feedback!]]></title><description><![CDATA[TL;DR Does asking users for feedback and ratings help in your app? Yes!When I joined Singapore Press Holdings in late 2015, most of the apps…]]></description><link>https://sphtech.github.io/get-your-app-users-to-give-feedback/</link><guid isPermaLink="false">https://sphtech.github.io/get-your-app-users-to-give-feedback/</guid><pubDate>Sun, 07 Oct 2018 23:10:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Does asking users for feedback and ratings help in your app? Yes!&lt;/p&gt;
+&lt;p&gt;When I joined Singapore Press Holdings in late 2015, most of the apps published were receiving low ratings and bad reviews. As I was working in the Chinese media mobile application team, I proposed a method to collect reviews and encourage users to give ratings. We tested the implementation in the zaobao.sg app (the flagship Chinese language news and videos app).&lt;/p&gt;
+&lt;p&gt;After rolling out the new functionality, the reviews and ratings in the Google Play Store doubled. Most of the reviews received were very helpful for the team, as they shed light on how we could improve the product.&lt;/p&gt;
+&lt;p&gt;From the screenshot below, you could see that there was a huge surge of reviews, and ratings increased by 10% after the implementation was added in February 2017. The average number of reviews increased beyond 100%.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4d42232e07032296408b0a75d8f9815e/8b3d9/zaobao-app-chart1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 971px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 48.1977342945417%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsSAAALEgHS3X78AAABo0lEQVQoz2WRWW/TQBSF/c954kcgJErFA+ob8NBKhCVSaSsEArElJG3tZqkdjz2JZ+zZN+5MWoHEkT26tu935txx5pOcs7D4dAcfqGTHNxcvr8cv8ouPm5kzxqWvUsphGJzbQz7TWncdUUoj1HDOA8gHqfC8ev6rGq26dcso9IQkxhjA4V5Z8qNCYkKxMTaxwfWVRz9jZZzTVps7GEjghVI2JgkZvLLOaM2s0w7Sg4F3itJ+uVJaq3tZaxPcS6X+7lyjGmMshNTa7PtgMMDA6e5RKfAG0zYKN3V19Hnx4Hj26EOeQSsBUQJF+EdwdvsRQGjQiHLS7VqM2waNp7cH5/m7Ocogj4txwRoSG2h9Nh+flRMolIZtIYZkQgyCxyHgMsp7u7eNsA2euTiSSevDT4dPJ6+3QnFtwn/yKYwBCn6VNa7sFmf5qOPbTVd2TCxWj78WTw5/HJwUb98vT0eL0+/t9M3y/KQYf6m+HU1eTdFvqeOxZcqYpr3hXbHZrWtSlttbMeSKXqohJ/11Sy5rcrXaXlUkr/Cs7YtmN8X9mpt4QH8Ad7k0jshkD1kAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Taken from Zaobao Google Play Console&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4d42232e07032296408b0a75d8f9815e/8b3d9/zaobao-app-chart1.png&quot;
+        srcset=&quot;/static/4d42232e07032296408b0a75d8f9815e/eb41c/zaobao-app-chart1.png 293w,
+/static/4d42232e07032296408b0a75d8f9815e/7110a/zaobao-app-chart1.png 585w,
+/static/4d42232e07032296408b0a75d8f9815e/8b3d9/zaobao-app-chart1.png 971w&quot;
+        sizes=&quot;(max-width: 971px) 100vw, 971px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Taken from Zaobao Google Play Console&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Additionally, we also received feedback from anonymous users who did not wish to put their reviews in Google Play Store as well.&lt;/p&gt;
+&lt;h3&gt;How did we implement it?&lt;/h3&gt;
+&lt;p&gt;Before the implementation, we used to have a feedback page like this:&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fb2cc810c6f4f3524b84ed5f64d6c217/039b6/zaobao-app-chart2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 326px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 197.54601226993864%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAIAAABxU02MAAAACXBIWXMAAAsSAAALEgHS3X78AAAGQElEQVRIx41WeUzTVxx/JovZlmzZlSwxjN5cLaLCNo3ch9zI4cQNdZkXNyKgyEAZuqkTKIegIKgzSqZuLvvDKDcVsFAuS2lpAWmLYKFAhd4X0H3bascUyD759OX9+svnfd/7fL/vvR8ymKBQKHg8LneQwxkYYDGZzL7evt6e3u7ubkYno4PeSX9Cf9LeQaczGB3QfzExblYh+PX1dB85dCAyInxXZERURHj4zrCdYaFhoSGhwcHBgYHBQYHbt22lONg7OVKcHB0dyQ5bv3K+ca3KKIaYB3/43sfbOyQkOCoy0t/Pb4efr5+vr7enp4ebG9Dd1dXe1haPxRJwOCARj8daWztRyCzmU8QeYIWHhQYE+AcGGLHDKPXz9fHx8fZyd3N39/BwcXEhEPEkEpEIJBKIJAL0cVjMH/fuoP5+ZkRYaJCHd4jvjiAf3yAvn0BP7wAPL38PL89trq4uX2+ysXP4Aku2wpKhxeDJWLwjlkDCYGtqatBTDis9YFdHaEab0z6abTTNdg+NtJtG/KYFaB3e5hbbYBfd5LSX5h7btGV/vXX4ww0hrRvCUzY437xzG/UNsk76RI1QDg0R9/Gw3/Ew3/Ks9/CsorlW0fDI+TyK/V4g590A9gchnPeD2Ov9Wet3CN8Jyvl4y427txCTy051C2nHRLZhImmfBRr5SQDtI3/ap4EDB86zU4ppViG1yLFu3ZY6tLkOOdeuc25HX6Z8aP/b3RrE5LBSgna1+CY0+yU0ecXRfOKbveIa3Q41uh9ucD/c6H7k0aaYh5Q9dc77ajfHAB+Qd9MoMcmk7Td/v416e7pP5WSrtRqVRg0UTU2JZ6bVOq1So1aYoNJppbMvRSze9IhQPCxQqJSQ4UJqwfWqKgRldPpUjuE1tDqdRqu1PBoWlwxLBt28Yo7Dlz+bkPNfLCwswN+XioupBRdRT1cXRJ6ZmRkdHR0bGxseHpbJZHq9XgfQ6lQvZaqZOfWcTKtQaaQKnV4/Xvm3tOJBSdmlc2fyQMzIzjqpUqlkJszNzSmVSqPQBB0MsqAHjdY4lFa3tCAdExlmZKVlpRfPn0PdDEZW5gm12rhCEGs0GlBqVoQa3mll41OGeTW1iFp9tQJ1dXb8eDJTLBaPjIzweDyYP6wK9Pq3AIEXDYbJW7WKW00lleXVlVdQF6MzIz0NBIsmmJWaNaDXG90uyK+qrECMTvqJjHSJRCIUCAR8wZhwDGbxyrD/AiwAo6fut6j/elJaefnCL2dRZwc9/ViqWq+TyKSS+TmJdB48W1EMar1hce7p0CJ3vLT8Ul7uadRJp6cmJ4sZbDGdNd0zON3FXlhRaRnBNO3iIurZvFxEb29PTkqUDAlecvnz/IkZLl+lVKpXh1wmBzG1sDAv9xRqb2tNTUmSa1TjUyLB87F5hQycNmZ42VKXRwa9KXJRdlYmam9tPZqSJJPKhAKhgM+XzM6aF2zWvKG0iIsKC/N/vQDix8mJCeaKBZhTZdHA44qRC/Lzr1VdRa20ltSUZJFocmBgYHBwEFqhUAh1DkXOZrOhcuRy+XLzLeLKK+XocUtzYkKcuTwsxQTRLA6tEvlixeUyRGtphmlDVYtEotnZWagQqNDl5bnimkF8pbwMtTQ1JiXEw66Aqb4wYWJiYo08m8WF+fmXy0pB3JQQF2t2a2lpyWKb2blVxQUmcXNjA0wbZtvf38/hcMCkoaEhaPl8/hpiakFBuVHc0BAfewRiQijYM3ASqEyAzttJ/jdyYUFZaQlqrK9LiI+DfIBPYM9yz9eKDOKSYtRYV5cYHwc7CQ6wFUOtIi40ihvqamMPH1wywXhqGY8b9RpUKhRmw0pBXP/oIUSWSmXPRkch1VKpdLntb8NcyCVFRaVFVOOa9++NAYf7mUwwHCoUSnJ4dXC53MnJyZzsbDi6YT+3UhzsKGQHuPU3Uihw8VPMdHijQ7ZwoyOFiMdVG8+wDroj2Z5AwJOIBBLhf9GWSMRZW1+vrkbj48893LbDSHa2NnY2y0laRpvX7atX9jakxvp6BAbDteNgSyLgsHgcxkgshoADYleg6csEIkGCxFNTCK4BMOD+n/d+vXAu93ROVubxE+lpGWmpZqYfOwqEzvH0tMzj6XAx/Xzmp+qqq9xBrkKh/AefZ5GKFBGQwgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;A screenshot is taken from Zaobao app&quot;
+        title=&quot;&quot;
+        src=&quot;/static/fb2cc810c6f4f3524b84ed5f64d6c217/039b6/zaobao-app-chart2.png&quot;
+        srcset=&quot;/static/fb2cc810c6f4f3524b84ed5f64d6c217/eb41c/zaobao-app-chart2.png 293w,
+/static/fb2cc810c6f4f3524b84ed5f64d6c217/039b6/zaobao-app-chart2.png 326w&quot;
+        sizes=&quot;(max-width: 326px) 100vw, 326px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;A screenshot is taken from Zaobao app&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;While it did receive some responses from users, I felt that it was not significant enough. The users who sent feedback via the Settings page was either a hardcore user who love your app or probably a subscriber who was going to complain about something &gt;.&amp;#x3C;&lt;/p&gt;
+&lt;h3&gt;Be proactive. Prod the user for feedback in the app!&lt;/h3&gt;
+&lt;p&gt;We targeted users who had installed the app for over a certain period of time &lt;strong&gt;and&lt;/strong&gt; consumed a lot of contents. We thought these users would be potential feedback providers. You would also have to think what are the best criteria to determine a potential user of your app, as it depends on the uses of your app.&lt;/p&gt;
+&lt;p&gt;In our case, since we were working on a news app, we expected the user to open and consume it on a daily basis. Also, some users may uninstall the app after a short period of usage. &lt;em&gt;(On that note, it would be helpful if Google Play Store allows app developers to collect users’ feedback upon un-installation)&lt;/em&gt; Therefore we could only target users who continued to use the app. We wanted to know the reasons why they continued to use the app, and what motivations or goals made them continue to use the app etc.&lt;/p&gt;
+&lt;p&gt;Hence, we just asked: ”&lt;strong&gt;Enjoy the app?&lt;/strong&gt;” (Enjoy my article? LoL)&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/555dd2a108db1df2087c6a836f018b19/51a3e/zaobao-app-chart3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 72.14285714285715%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAADdElEQVQ4y02Uf0xVZRjH779stZJxL/fnOed9zzn3BxcQuCAm10HgNWHGD5W2bLVmW7k2cxVk4aZ/FekfjmotEfHKmjh1BrTo11obW3P+wYI7MloaiSE1xGbighru03v4EZ7tu+ec9zzns+c8z/d9XUIIHBmGgSVNYtIirAvMQAhLMwg7z2pdGCpHGKzmayo/akj6ErsZqm9hYlsL75Rsx+W8lCrZJzTqZCFdWWUcf3QjJwNVfJhVTIfL4pgrQkKzCDlAYwWoa0TDUS59/i2/T99kcn6WY50fPACUOnW+KH3uavpFLQOijh/bu5lMD/DdM29Rlq2hmcu5UiqgXyO+Oc7YrV8YuTVB39RlDr3/7gpQLFdYqxfQVbCF7kiKtJFi6NB7XO7s5cy+11hvm/hVhZoDU+CAqjBemc/wle+5OnWd6TszHD/RuQxc6qFuYIct8hJhYkJF1Ts720siy0N5jk5pwqYoJij2SRJ+kzxbJ688zvWJSWb/vM3i4n1O9/SsAYUahGEb6MUCXQ0jKHTikSinQjWc8dfQG0rRK1KcXlfBBU81rfFShC15Ze/LtO7bz8E3DrCrqUkBjTWgjErMfCUHrn4tT5eks5Oc99VwTksxUPIU/YXNfFq6k1djpWwORTmRvYmT/krSwWqOeh/DFTJ0VY2qKKjiJoNAWEVNVz3ViSngOXcVX8d3cvGRJJn9R1n4aZK54VE6KpvZvuUJbk/cYPbX37g39QejQ5dw7ZGlHPZtpM1fTptRxpuBMg56N/C6t4QCabPbn8/znnyec6sYKGKPKGOvXk6tO0Jjww7mFua5t/gv/wCjP4zhejtYwWD24/SFtvJlQTP9/hQXH05y9qEK4n5BjqGRqwaQG9Hx2BpuK0juep11EQ9PvlTPzPQUN4fHmB2/RmZkBFebO8Fn2jYu6CkGNzzNtZ4Bbpz/isEXWoiYPmTCwipSfVVyolVsYudZ+ANemp7dxcyVnxk90s3V7k8Yy2RwHYhVccrcykeW8l5iB1+0HuGbwx183PgihbaFFhbL205NflVSSLy5CljfyH3WrvHxcVym2qeW+sDZr2FhIt0+RI4XWw1JqjXHn/9ba0XSVECvl4bGBubuznH3zl8s/D1PxqnQORT0B2SoZEf6yoGxZHrlgtX7JaCUyhVBkskkXV1dS0qn07S3t/MfXHMlnLtnif8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Example flow we used (Words are translated into English for demo purpose)&quot;
+        title=&quot;&quot;
+        src=&quot;/static/555dd2a108db1df2087c6a836f018b19/1c968/zaobao-app-chart3.png&quot;
+        srcset=&quot;/static/555dd2a108db1df2087c6a836f018b19/eb41c/zaobao-app-chart3.png 293w,
+/static/555dd2a108db1df2087c6a836f018b19/7110a/zaobao-app-chart3.png 585w,
+/static/555dd2a108db1df2087c6a836f018b19/1c968/zaobao-app-chart3.png 1170w,
+/static/555dd2a108db1df2087c6a836f018b19/51a3e/zaobao-app-chart3.png 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Example flow we used (Words are translated into English for demo purpose)&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Our prompt only had a ”&lt;strong&gt;Yes&lt;/strong&gt;” and ”&lt;strong&gt;No&lt;/strong&gt;” option, with no other way to dismiss the “annoying” question. Selecting an option will lead to the next dialog box:&lt;/p&gt;
+&lt;p&gt;If the user answered ”&lt;strong&gt;Yes&lt;/strong&gt;”, we would ask them a favour to give the app a rating on the Google Play Store. Some helpful users did give some useful suggestions besides rating the app.&lt;/p&gt;
+&lt;p&gt;If the user answered ”&lt;strong&gt;No&lt;/strong&gt;”, we would appeal for their feedback so that we could improve the app. This would be the opportunity you could receive helpful feedback from the user.&lt;/p&gt;
+&lt;p&gt;We found that this technique had helped us tremendously. You might have seen similar patterns and prompts in some apps in the market too. This could perhaps become the trend or &lt;a href=&quot;https://www.urbandictionary.com/define.php?term=M.E.T.A&quot;&gt;M.E.T.A&lt;/a&gt; in harnessing user feedback for product improvements!&lt;/p&gt;
+&lt;p&gt;Hope our discovery will help in your application development journey :)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Original post by Winson Tan at &lt;a href=&quot;https://medium.com/@winsontan520/how-to-get-more-feedback-and-ratings-from-your-mobile-app-users-f74145895471&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Developers Gym by Thoughtworks - 14 July]]></title><description><![CDATA[This was the second Developers Gym session organized by Thoughtworks, of which we were honoured to play host to. The coding dojo, formulated…]]></description><link>https://sphtech.github.io/developers-gym-by-thoughtworks-14-july/</link><guid isPermaLink="false">https://sphtech.github.io/developers-gym-by-thoughtworks-14-july/</guid><pubDate>Wed, 25 Jul 2018 14:25:00 GMT</pubDate><content:encoded>&lt;p&gt;This was the second Developers Gym session organized by Thoughtworks, of which we were honoured to play host to. The coding dojo, formulated and taught by Gordon Song from Thoughtworks, aimed to impart programmers with the skills of practicing Test Driven Development (TDD) in their software development projects.&lt;/p&gt;
+&lt;p&gt;To ensure that there is enough face-time between the instructor and the students, and for them to reap the maximum benefits through the session, the seating capacity is confined to 20 students only. Madhu and Ye Maw joined in this session.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0acf2740e149ed4b8a4950a7927acb73/5fd2a/IMG_8075.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAVDyWEqHJ//EAB0QAAAFBQAAAAAAAAAAAAAAAAABAgMSBBETISL/2gAIAQEAAQUCOrCnoqy7BvdzK/8A/8QAFxEBAAMAAAAAAAAAAAAAAAAAARARMf/aAAgBAwEBPwGh2P/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/AVf/xAAgEAACAQEJAAAAAAAAAAAAAAAAAREhAhASMTJBUWFx/9oACAEBAAY/AqZbDwOeStqPLtKkfbP/xAAcEAEAAgIDAQAAAAAAAAAAAAABABEhUTFBYZH/2gAIAQEAAT8hzOF8Lu4XsoSrdxurUdAqZ+Sg8TA6jduzif/aAAwDAQACAAMAAAAQbC//xAAYEQEAAwEAAAAAAAAAAAAAAAABABEhkf/aAAgBAwEBPxChFBgHJ//EABkRAQACAwAAAAAAAAAAAAAAAAEAETFBkf/aAAgBAgEBPxBUxK7vs//EABwQAQEAAgMBAQAAAAAAAAAAAAERACExQVFxof/aAAgBAQABPxDdCeB0HL49axLINZ0JR9V0YIHqKA+NwYFVOAvBcawgKai3X7je6D4HP//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Michael advising some of the students on TDD.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0acf2740e149ed4b8a4950a7927acb73/64a7b/IMG_8075.jpg&quot;
+        srcset=&quot;/static/0acf2740e149ed4b8a4950a7927acb73/57443/IMG_8075.jpg 293w,
+/static/0acf2740e149ed4b8a4950a7927acb73/bedd3/IMG_8075.jpg 585w,
+/static/0acf2740e149ed4b8a4950a7927acb73/64a7b/IMG_8075.jpg 1170w,
+/static/0acf2740e149ed4b8a4950a7927acb73/5fd2a/IMG_8075.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Michael advising some of the students on TDD.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The session was organized into the following segments:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Theory teaching&lt;/li&gt;
+&lt;li&gt;Practical Part 1&lt;/li&gt;
+&lt;li&gt;Break&lt;/li&gt;
+&lt;li&gt;Sharing of what has been done for Part 1&lt;/li&gt;
+&lt;li&gt;Practical Part 2&lt;/li&gt;
+&lt;li&gt;Sharing of what has been done for Part 2&lt;/li&gt;
+&lt;li&gt;Conclusion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The programmers were tasked to do pair programming, based on the programming challenge introduced by the instructor during the Theory segment. After part 1, the programmers were then asked to change their pair partners before commencing part 2. This was to facilitate the exchange of ideas among more people in the group.&lt;/p&gt;
+&lt;p&gt;Some of the students were so enthusiastic that spontaneous deep discussions on how they tackled the programming challenge sprung up during the breaks. Their passion in coding was infectious!&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/73cd5864326efe7cad3072cebc656eb1/0a4ca/enthu-coders.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 614px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 163.19218241042347%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAhCAYAAADZPosTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAIuklEQVRIx0WVeVCV5xnFP9n3HUTZIomCLKJllx0uIHAvl+0iwgXhBgQEMYAIKggICoKyL7LvQgRETTCJTYxRk9Sl0emWNEtbZ5pMZ9pMnenyRzvTX1+wM/3jzPst8533ec5z3vNJl5uamOkZYGVkioWJOcYnF+mdXqVl5iYnZ9epmr1N5dQ65WM3KRpco6BnBfWlRbI75lCdnyC5cZCEU11EVrTim30c6VJjC719o5ztmaCyb46SgSWKhpd5c2iFgv5rHO65Rm7PMuqeVXIE2aGuJTLaZ0ltGSfxTD/R1R3sL21iX1417orDSM2nmznWMUpu1yzZ/VdJ7Zwm5cI4ytYxlOcnSb0wvYmNa3nLGHFNQ8gaBpDVDxBR20voiU72V5wnqOg0nqkapPq6c7x1eZyioQUOjV5DfmWVhN5FYtumiDg7TPipHsI3KmkaJlZsJL88h7JrnrTuBVRizeqa4dDFUWTVF/DJLkNSaKrIvTBMyejbHBwThKPLJAy+jax7noi2CSKah8nqnedg/yJHJq9TOrNG/vgK5WItnVghu2dG6DpFcv1lAjTVSPsLTnKwfYSySaHP1BpJosr4gatECQnC2saJODdESvcUuVcWqZhdo0xANXSVwolljoy9TZL4Nra5j9DKFrzVFUgRRadQd01TvfwhRTceoJxZF4SLRF6eJkhUvr+5h8y+abKG5skcFO32TpM3toR6ZJHkrklCzvbgW9uOT2kDHjkbhMWn0fQvcfL6XUpuPSBj+SMSx24Q1TNPwPlB/Bs6CGvpI+zCEOHtw0R3jBDTOSrkGCa0dZDQpj786y6y91gjnnlVSLF1vaRfXiK9c570i7MkCd1krSMEn+rE93QHkR1jyC6NbyK2e5rY3lli++aJ61sgVmwa1TkjNhwj4MwAPsfakc70zlExuErh4kPUs/fJmrhDcv91Ejb0K6zAO7OA6LYxFBO3SZ65Q8riJ6KLz1CtPEK1/IiMa49JXXqKfPIhMZduIKXKD1BaUkWRELbw1jNy5u+TvfIFcTVtRMpiSZHHUd47Qsr15+S8+0vyfvoNBXd/h+bjP6C594Lc21+iEKZX9t1APvgekpm1OWa21tg6OZPf0ELZ6So0nYNEiRacnB35cLCOifV10te/3iQpfPA9JY9/pPTnLyl+9nfevPmMxCQFttu34+wXgmRqbo65tTUWdrYU5CtIUoYRJY8kd+IWC+Ot3Osro3b+JiVf/IPihz9Q+ujPm50ULtyj4NpnXLnzGbcGWnDa5YqhqSmSgZEpxuZmbHWw53hZNgmKeEJCQ3lefwluv0NjzTGS1EdQVDVT+PELjjz7G/KaMSIVYqp+CSQdSESlyuA1Dw+snZyQjAWrlZ0VTq9tw+WNN1BlyShOSebJAQ1DQQpMLGwwtbVF10CL1LYRLn33T7Iqe/FPbMTC0QtjK1uMbbZiZrcBW9GyhSmWtpY4OImPTC04mBZCXU4CR97YR6CjCzpGxphY2Yh3JsTEx/Dtrx/x+PYSd99ZoePcGbZoG6CjZ4i2nj7a+gZIVjbmhPnvJtBflCwqzVMEUV+WRozDTrYbGKNlYISVqMDYwprtjna8P97EdLOGOyNVvD90GqMNkk0yfbR09ZB8vV9DkxHHbx6sMtbXQP9b8dSdOExwaAK+Xruxsd+KrYMDhmamxMWEcHf4KLO1ibzTVcjnYxX4uG5FkrQFtryCn487H43W8tdHc/zn5Vc8W2tDpcnl/YdP+PbZI+SKONIyk5if6Ocvf3oBf/+OD4aPs9qq4pvVWsYbNYT77STI24moUE+kzPhgPr1ynKdzTfz7j0/46u4oh988yKfX53h3UiS5mPL69QW+//oX/PZXT/n9p1f5fLZW2CmP5wsnaKzIJybQk5x4X4ozw5Hst9qREu7Jg6kL8OOXPPlwiZoT5bScyKOkUEVupoLVxWnu3VziZ++tMdVext0rpdQXRBMQsAcdM0skXUOkLbqvWjc1t0DS0qVBk8q/vr7Pd08/oLWmlIq8OIpLs1AXKGlqOcHUSDfjva201xXQWq5E18RcDMMII+EMfeEEXQNDdMVgJAtLC7TElKL8vXj55DY/PL5FfZGC/PQwSorSqa7KE0PSUF2ZT+v5GiqPpiGP8EHbwAR9Q6NNu+joGfwPYsrmlpab7P4+u3jx0RIvH69xJldGerwfRwvTyFRFUSyIyytyaTpXQ7YqRgxgB5K23v8r2yDTFdbRFW2bCjvo6BsSEeDNJ0O1fDHfQGTATkL8d1FzNIecTBnJCf4UqBVU15ahkAfiZG8hDK0nSAQ2PCjWLTraaAlI+kYmuLm6cOZwEtWqUJQR7rh7OuG11wmV8KemIJm4A4EEh3iRKA8j7/ABPIT3tmiLarRe+U9LW5BpaYln4t55uz3ysD0Ee7tgt9UMK3trXL1ccPHeRl6ekoKSTNJVcSIb/VAoI6ir0aBKCBREEpZWpliYG70iFYQbkI6mRqOO9yEixJdtrs447NiOg6s9bnt3oVRGk5WTRGFRNjm5qQT4++DhvZujIubq1UnitJSSGL57k1xPV2ezUul4uhBd6UdM2D7sXRyxtbfCwtYMNy83MlQyzjYeo+NiE73dbcTGR+EX4U/pkRQmK7N5PnOG2vyYTcJNbBFHLy3chxAfFxwdt2EnUldfTxczGyPc9uwkSQSFMiOc3Hyl8GQ26qJMUoSmaYdiOJkewf3+Gm52lpAZ/RO8XnfAwky0n7Tfk9dd7NA3NcbSxhozCyPsXEXg7rAhMNgNz73OuLrbiyHtYE/ALkKEfgeSgkgULpiuU/NBdylPxk9xp6ecKzUZSB6uDiKxjUQ8mYhctMXS2QxrDzMcdm5jn+9OwqJ8cBeJ5OHtKjbYQ5gsEFm4O462poT67BBn2IdadTgN+ZEczwgS/jTUE9FkxMbPymWHAw5e1th7muPs5iAIvJGLf0xAsCcyESLq3Ez8w/eRlrAX521Wr3TT1hLG1sLAYGMoWvwXiSJZjRx3gm8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Courtesy of Michael and Hui Qian&quot;
+        title=&quot;&quot;
+        src=&quot;/static/73cd5864326efe7cad3072cebc656eb1/0a4ca/enthu-coders.png&quot;
+        srcset=&quot;/static/73cd5864326efe7cad3072cebc656eb1/eb41c/enthu-coders.png 293w,
+/static/73cd5864326efe7cad3072cebc656eb1/7110a/enthu-coders.png 585w,
+/static/73cd5864326efe7cad3072cebc656eb1/0a4ca/enthu-coders.png 614w&quot;
+        sizes=&quot;(max-width: 614px) 100vw, 614px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Courtesy of Michael and Hui Qian&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;We observed that pair programming may or may not be appealing to programmers. It can be of an “acquired taste”, some perform better and some perform less if they were to practice pair programming. Also, part 1 of the practical segment may be a little short too (45 minutes), since new students would need time to set up their IDEs and get the unit testing framework working, as well as pick up the theories and understand the programming challenge too.&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/02e3c7b5b410b96e758f856f153a0136/5fd2a/IMG_8082.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 1170px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAHXSCXNpB//xAAZEAEBAQEBAQAAAAAAAAAAAAACAwETACL/2gAIAQEAAQUCPPkRPVemToqfM1qeHV7/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARL/2gAIAQMBAT8BZr//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQIBAT8BjY//xAAbEAACAgMBAAAAAAAAAAAAAAAAAQISESGRMf/aAAgBAQAGPwK1GelUn0cXtDwkZko8P//EABoQAQEAAwEBAAAAAAAAAAAAAAERACFBMWH/2gAIAQEAAT8hmnAvrMcmpuFxCoS4HaIe5AJrvTBKrz4z/9oADAMBAAIAAwAAABBj7//EABYRAQEBAAAAAAAAAAAAAAAAAAAxYf/aAAgBAwEBPxCxg//EABcRAQEBAQAAAAAAAAAAAAAAAAEAEWH/2gAIAQIBAT8QQm3a/8QAHBABAAMAAgMAAAAAAAAAAAAAAQARITFRYXGh/9oACAEBAAE/ELkmrY019iwuCRgBzsLHwEy2epYKtUzLuL7CxE10PibYukBocGz/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Presentation and feedback after part 1 segment.&quot;
+        title=&quot;&quot;
+        src=&quot;/static/02e3c7b5b410b96e758f856f153a0136/64a7b/IMG_8082.jpg&quot;
+        srcset=&quot;/static/02e3c7b5b410b96e758f856f153a0136/57443/IMG_8082.jpg 293w,
+/static/02e3c7b5b410b96e758f856f153a0136/bedd3/IMG_8082.jpg 585w,
+/static/02e3c7b5b410b96e758f856f153a0136/64a7b/IMG_8082.jpg 1170w,
+/static/02e3c7b5b410b96e758f856f153a0136/5fd2a/IMG_8082.jpg 1400w&quot;
+        sizes=&quot;(max-width: 1170px) 100vw, 1170px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Presentation and feedback after part 1 segment.&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Overall, it was a beneficial session for our folks, as we got to revise about the TDD concepts and put them into practice. Some of us felt that TDD would be helpful for long-term projects, since the tests will be of great use when it comes to system maintenance and project scope updates. However, for TDD to be possible, we will need to factor in more time during software development, but it is definitely a time-cost that will be well spent. Project owners need to recognise the importance of TDD as insurance for the project’s health and well-being.&lt;/p&gt;
+&lt;p&gt;There will be more of this coding sessions to come in the near future, if you would like to learn TDD with the expert, do keep a lookout on the &lt;a href=&quot;https://www.meetup.com/Junior-Developers-Singapore/&quot;&gt;meetup group&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;Background:&lt;/i&gt; JuniorDevSG is a meetup group founded by Michael Cheng, the veteran serial meetup founder and self taught programmer. It focuses on interfacing with programmers who have just joined the workforce, as well as fostering strong relationships and engaging with the programmers through talks, sharing and networking sessions.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Updates to Govtech Agile Practices by Steven Koh - 2 July]]></title><description><![CDATA[It was our great pleasure to have invited Mr Steven Koh, the Deputy Director of Government Digital Services (GDS) at Govtech, to update us…]]></description><link>https://sphtech.github.io/updates-to-govtech-agile-practices/</link><guid isPermaLink="false">https://sphtech.github.io/updates-to-govtech-agile-practices/</guid><pubDate>Wed, 18 Jul 2018 17:50:00 GMT</pubDate><content:encoded>&lt;p&gt;It was our great pleasure to have invited Mr Steven Koh, the Deputy Director of Government Digital Services (GDS) at Govtech, to update us on the journey that his organisation is currently in, with regards to practicing agile within the various teams.&lt;/p&gt;
+&lt;p&gt;He gave a quick overview of the various products which GDS has implemented for the past 2 years, for example the Business Grants Portal, the OneService app, the myResponder app, Beeline etc. He also elaborated to us in depth how the teams in GDS collaborated when they were building these applications, and some of the challenges they have faced.&lt;/p&gt;
+&lt;p&gt;Some of the key points he shared were quite enlightening. He has a strong view on how an individual has to make one’s own deal, if one is to thrive in the technology industry. One can be at the top of the crop today, but relegated to the bottom the next day. One has to continuously strive to prove one’s value everyday.&lt;/p&gt;
+&lt;p&gt;He also shared, based on his past experiences, how companies with a long history can tend to be narrow minded when it comes to agile or digital transformation. He observed that these old companies are inclined to view technology as a hammer, to nail each and all kinds of problems with it. The truth is, he elaborated, not all problems can be, or needs to be solved using technology. One should understand the problem and the context fully and apply the right solution to it.&lt;/p&gt;
+&lt;p&gt;Another aspect of experiences he shared, was in the light of product development. He advised that one should choose one’s Product Owner wisely — in the case of his organization, the Product Owners are operational people from the various government agencies.&lt;/p&gt;
+&lt;p&gt;A good Product Owner, he elaborated, needs to have good business acumen, and a good domain knowledge to be able to prioritize what tasks are important. A Product Owner should not be invoking the “boogeyman” tactic to scare developers into getting things done, and needs to listen to inputs from others, before deciding and forming one’s own opinions on what are the right things to do. The Product Owner should be given the autonomy and power to make decisions since he/she is responsible for the product. The Product Owner needs to be the person who steers the product.&lt;/p&gt;
+&lt;p&gt;While there are these many expectations from a Product Owner, Steven also highlighted that the product at hand has to be important and high-valued enough, so as to get the Product Owner to be deeply invested in it.&lt;/p&gt;
+&lt;blockquote&gt;&lt;strong&gt;Product Owner needs to figure out what are the right things to do.&lt;br&gt;
+The development team needs to figure out how to do the things right.&lt;/strong&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Our discussion then moved on to the development team’s component in an agile team. In terms of hiring, Steven advised that hiring via the traditional method of putting JDs in job portals is no longer enough to attract talent. The organisation needs to proactively attend events and network with individuals to promote the visibility of the organisation.&lt;/p&gt;
+&lt;p&gt;He added on that since there is only a finite pool of talents in the local market, instead of adopting agile for all the products — which means dedicating specific human resources for one product, be strategic and choose the products that require greater focus wisely. Also, even though an agile team is laser focused in delivering the end product, he reminded that it is important to have incorporate slack time for the developers, so that they have the bandwidth to think, reflect and innovate in their work.&lt;/p&gt;
+&lt;p&gt;It was really a wonderful morning session, learning these tips from an agile coach who has been there done that — and is still practicing — agile. Hopefully we are able to invite more thought leaders and practitioners to come and share with us their enlightening ideas and experiences!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[AI in News Media]]></title><description><![CDATA[IntroductionNews media companies like Singapore Press Holdings (SPH) continue to be faced with rapidly accelerating technology innovation…]]></description><link>https://sphtech.github.io/ai-in-news-media/</link><guid isPermaLink="false">https://sphtech.github.io/ai-in-news-media/</guid><pubDate>Thu, 12 Jul 2018 22:46:00 GMT</pubDate><content:encoded>&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;News media companies like Singapore Press Holdings (SPH) continue to be faced with rapidly accelerating technology innovation that will profoundly impact the business. Major disruptions are already happening in the industry due to evolving content consumption patterns, competition from Facebook and Google, and emergence of innovative technologies. In this dynamic global environment, news media companies must evolve and change. &lt;/p&gt;
+&lt;p&gt;Artificial intelligence (AI) is currently one of the most widely discussed and hyped technology. At SPH, we are convinced that AI is no longer a hype. AI has become a game changer which will profoundly impact the future of our business. The ultimate goal is to exploit AI to automate workflow processes and better connect with our customers to drive efficiency, customer engagement and revenue.&lt;/p&gt;
+&lt;h3&gt;Opportunities&lt;/h3&gt;
+&lt;p&gt;AI and machine learning are presenting huge opportunities in the entire news publishing value chain: Content creation - Content distribution - Content consumption.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1) Content Creation&lt;/strong&gt;&lt;br&gt;
+AI deployments to automate newsroom processes and increase productivity of journalists are on the rise in the news media industry. Intelligent tools to scan, predict, surface trends for story production, conduct automated fact checking will assist journalists to do their jobs better with greater speed, accuracy and scale.&lt;/p&gt;
+&lt;p&gt;Publishers such as Associated Press, Washington Post and Yahoo! Sports are already using AI to automate story creation relating to financial reporting and sports games results. At SPH, we are exploring the use of AI tools to partially automate data into text stories as well as text into videos. The use of robot-journalism is especially suited for routine and laborious writing of news articles that are data-rich and follow a structured template. Journalists can then be freed up to focus on creating more in-depth stories.&lt;/p&gt;
+&lt;p&gt;To increase newsroom efficiency, we also developed an auto-tagger tool to speed up the metadata tagging in news content. The tool was implemented using Grated Recurrent Unit (GRU) neural network model and technologies such as Python, Tensorflow and Keras. We trained the neural network using data from past archives of news articles that were manually tagged by the journalists.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2) Content Distribution&lt;/strong&gt;&lt;br&gt;
+Customers are interacting with news across different media channels and devices. Publishers have to follow their customers and push the right content to the right audience at the right time through the right channel. Digital news at SPH is currently distributed through websites, mobile apps, push notifications, messaging apps, email newsletters and social media platforms. AI tools that analyse user and content data to provide actionable insights on when and where to promote a story will help publishers to optimise traffic and improve customer engagement.&lt;/p&gt;
+&lt;p&gt;Publishers including SPH are also experimenting with news delivery through AI-powered chatbots and voice-enabled smart speakers such as Amazon Echo and Google Home. This allows publishers to reach new audience through a conversational and frictionless interface.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3) Content Consumption&lt;/strong&gt;&lt;br&gt;
+Customers expect customization, personalization and real-time responsiveness. Publishers are sitting on a goldmine of user and content data that can be analyzed to derive actionable insights for personalising a user’s journey and uncover potential opportunities.&lt;/p&gt;
+&lt;p&gt;At SPH, we are working on a content recommendation system that uses AI and machine learning to recommend personalized news based on similar content topics, story popularity, user activity and other users with similar behavior. This will help to increase user stickiness on our news sites and enhance monetization opportunities.&lt;/p&gt;
+&lt;p&gt;News publishers such as Wall Street Journal are implementing AI-driven dynamic paywall that leverage user browsing data to predict a user’s propensity to subscribe. Content access rules and marketing messages will be personalized depending on how likely users will convert to become paying subscribers.&lt;/p&gt;
+&lt;h3&gt;Challenges&lt;/h3&gt;
+&lt;p&gt;The opportunities of AI to transform news media business are huge. However, there are also challenges to AI adoption. Implementation of AI requires large amount of investment in terms of technology, infrastructure and talent.&lt;/p&gt;
+&lt;p&gt;At SPH, we started AI experimentation by leveraging open source natural language processing software and ready-to-use machine learning algorithms. Service providers such as IBM Watson, Amazon and Google also enable companies to jumpstart AI experimentation via easy–to-use APIs, tools and cloud-based services.&lt;/p&gt;
+&lt;p&gt;To overcome the shortage of AI talent and better manage complexity and risks, we collaborate with AI technology partners in implementing the content recommendation engine. SPH’s ready availability of training data (news archives) coupled with partners’ expertise to customize the machine learning algorithms will hopefully drive AI deployment and results much faster.&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;AI will continue to make breakthroughs and become a key differentiator among news media companies to stay competitive in the digital ecosystem. News media companies must leverage the power of AI across the entire value chain to drive deeper customer engagement and improve monetization.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Original post by Liang Moung&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How does myBBC works?]]></title><description><![CDATA[BBC’s myBBC journey could be an inspiration for our mySPH journey. From forgerock’s customer story & forgerock partner Accenture’s myBBC…]]></description><link>https://sphtech.github.io/how-does-mybbc-works/</link><guid isPermaLink="false">https://sphtech.github.io/how-does-mybbc-works/</guid><pubDate>Thu, 12 Jul 2018 02:01:00 GMT</pubDate><content:encoded>&lt;p&gt;BBC’s myBBC journey could be an inspiration for our mySPH journey. From forgerock’s &lt;a href=&quot;https://www.forgerock.com/resources/view/63234462/customer-story/powering-digital-transformation-at-the-bbc.pdf&quot;&gt;customer story&lt;/a&gt; &amp;#x26; forgerock partner Accenture’s &lt;a href=&quot;https://www.accenture.com/us-en/_acnmedia/PDF-42/Accenture-CSB01344-BBC-Security-Credential.pdf&quot;&gt;myBBC story&lt;/a&gt;, we can find out a lot of similarities with our mySPH roadmap. Interestingly their IAM solution also revamped from on-premise legacy architecture to Forgerock IAM in aws cloud.&lt;/p&gt;
+&lt;p&gt;These are some of the technical aspects which will catch our eyes from the above two documents.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;AWS, Auto-Scaling&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;“With on-demand scalability powered by Amazon Web Services, the platform can also be scaled up to cope with large spikes in audience traffc and scaled back down for day-to-day traffc numbers.”&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Automation, DevOps, ChatOps, Self-healing&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;“Automation was a key feature of solution deployment, enabling 99.95% availability. It’s also ‘self-healing’ so that when a problem is detected the infrastructure automatically starts fixing itself. We used an IBM Watson chatbot to manage and deploy infrastructure, which means that the solution can understand commands in human language. And extensive use of standard APIs in the build means new applications can be easily adapted and integrated, creating a seamless transition to the new platform.It really is a platform built for the future.”&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Seamless login cross-devcie&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;“Introducing token-based OpenID connect authentication. It opened BBC ID to native mobile applications for the first time; providing a major step in cross-device personalization for the 6.4 million signed-in users since May 2015.”&lt;/p&gt;
+&lt;p&gt;Let’s try to find out from network trace &amp;#x26; cookies, which OpenAm authentication method is being used for myBBC login. 😃&lt;/p&gt;
+&lt;p&gt;What happens when we click the login button in www.bbc.com home page.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;No.&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;HTTP Status&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Details&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;1&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;HTTP GET 302&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://session.bbc.com/session?ptrt=http://www.bbc.com/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;2&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;HTTP GET 301&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://account.bbc.com/oidc/v1/user/authorise?state={&amp;quot;ptrt&amp;quot;:&amp;quot;http://www.bbc.com/&amp;quot;,&amp;quot;isCasso&amp;quot;:false,&amp;quot;nonce&amp;quot;:&amp;quot;4CAiRhhQ-NjJSkC7Vm65jjdpv2xoyBY6MEOs&amp;quot;}&amp;amp;response_type=code&amp;amp;redirect_uri=https://session.bbc.com/session/callback&amp;amp;service=IdSignInService&amp;amp;client_id=Account&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;3&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;HTTP GET 302&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://account.bbc.com/oidc/v1/user/authoriseLogin?realm=/&amp;amp;service=IdSignInService&amp;amp;goto=https://account.bbc.com/oidc/v1/user/authorise?state={&amp;quot;ptrt&amp;quot;:&amp;quot;http://www.bbc.com/&amp;quot;,&amp;quot;isCasso&amp;quot;:false,&amp;quot;nonce&amp;quot;:&amp;quot;4CAiRhhQ-NjJSkC7Vm65jjdpv2xoyBY6MEOs&amp;quot;}&amp;amp;response_type=code&amp;amp;redirect_uri=https://session.bbc.com/session/callback&amp;amp;service=IdSignInService&amp;amp;client_id=Account&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;4&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;HTTP GET 200&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://account.bbc.com/signin&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;5&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;HTTP POST 200&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://account.bbc.com/signin?nonce=4CAiRhhQ-NjJSkC7Vm65jjdpv2xoyBY6MEOs&amp;amp;ptrt=http://www.bbc.com/&lt;/code&gt; &lt;br&gt; Formdata - [jsEnabled:true username:abc@gmail.com password:password attempts:0]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;6&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;HTTP GET 302&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://account.bbc.com/oidc/v1/user/authorise?state={&amp;quot;action&amp;quot;:&amp;quot;sign-in&amp;quot;,&amp;quot;nonce&amp;quot;:&amp;quot;4CAiRhhQ-NjJSkC7Vm65jjdpv2xoyBY6MEOs&amp;quot;,&amp;quot;ptrt&amp;quot;:&amp;quot;http://www.bbc.com/&amp;quot;,&amp;quot;amlbCookieValue&amp;quot;:&amp;quot;01&amp;quot;,&amp;quot;awsElbCookieValue&amp;quot;:&amp;quot;0FC55D47187ECE9190E70C0A017AC69A844CA844E9C726D6E84B7EE5DE0D5D986683330A5159CE5ECC76BE5C0D98ACC5FFDFADB0DF1B53B20EE63DC078C024BC6C350E1CCAF6C40C8AE3EEEC7403EA1A860BB50DAD&amp;quot;}&amp;amp;response_type=code&amp;amp;redirect_uri=https://session.bbc.com/session/callback&amp;amp;service=IdSignInService&amp;amp;client_id=Account&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;7&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;HTTP GET 302&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;https://session.bbc.com/session/callback?code=c4b8dec2-5b44-465b-a8db-148e8302f72b&amp;amp;scope=explicit implicit openid pii uid&amp;amp;iss=https://access.api.bbc.com/bbcidv5/oauth2&amp;amp;state={&amp;quot;action&amp;quot;:&amp;quot;sign-in&amp;quot;,&amp;quot;nonce&amp;quot;:&amp;quot;4CAiRhhQ-NjJSkC7Vm65jjdpv2xoyBY6MEOs&amp;quot;,&amp;quot;ptrt&amp;quot;:&amp;quot;http://www.bbc.com/&amp;quot;,&amp;quot;amlbCookieValue&amp;quot;:&amp;quot;01&amp;quot;,&amp;quot;awsElbCookieValue&amp;quot;:&amp;quot;0FC55D47187ECE9190E70C0A017AC69A844CA844E9C726D6E84B7EE5DE0D5D986683330A5159CE5ECC76BE5C0D98ACC5FFDFADB0DF1B53B20EE63DC078C024BC6C350E1CCAF6C40C8AE3EEEC7403EA1A860BB50DAD&amp;quot;}&amp;amp;client_id=Account&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;8&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;HTTP GET 200&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;http://www.bbc.com/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Based on the above requests, it’s an OpenID Connect implementation. There are three primary flows in openid connect : Authorization Code, Implicit, and Hybrid. These flows are controlled by the &lt;code class=&quot;language-text&quot;&gt;response_type&lt;/code&gt; query parameter in the /authorise request. Here &lt;code class=&quot;language-text&quot;&gt;request_type&lt;/code&gt; is code, so the flow used is authorization code flow.&lt;/p&gt;
+&lt;p&gt;At the 5th step, authorize call to openam domain is issued and it creats openam session cookie [ckns_session] and a JWT [ckns_jwt], this jwt is encrypted.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;set-cookie: ckns_jwt=&amp;lt;&amp;gt;; Max-Age=63072000; **Domain=.account.bbc.com**; Path=/; **Expires=Tue, 19 Jul 2020 02:00:37 GMT**; Secure
+set-cookie: ckns_session=&amp;lt;&amp;gt;; Max-Age=900; **Domain=.account.bbc.com**; Path=/; **Expires=Sun, 19 Jul 2018 02:15:37 GMT**; Secure&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At the 7th step, id token, access token and refresh token are stored in the browser cookie.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;set-cookie: ckns_rtkn=&amp;lt;&amp;gt;; Max-Age=63072000; **Domain=.session.bbc.com**; Path=/; **Expires=Sun, 19 Jul 2020 02:00:37 GMT**; HttpOnly; Secure
+set-cookie: ckns_idtkn=&amp;lt;&amp;gt;; Max-Age=3600; **Domain=.bbc.com**; Path=/; **Expires=Fri, 20 Jul 2018 03:00:37 GMT**; HttpOnly; Secure
+set-cookie: ckns_atkn=&amp;lt;&amp;gt;; Max-Age=3600; **Domain=.bbc.com**; Path=/; **Expires=Fri, 20 Jul 2018 03:00:37 GMT**; HttpOnly; Secure
+set-cookie: ckns_stateless=1; Max-Age=31536000; Domain=.bbc.com; Path=/; Expires=Sat, 20 Jul 2019 02:00:37 GMT
+set-cookie: ckns_id=&amp;lt;&amp;gt;; Max-Age=63072000; Domain=.bbc.com; Path=/; Expires=Sun, 19 Jul 2020 02:00:37 GMT&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ckns_session cookie is same as our openam iPlanetDirectoryPro cookie which is set with 15 mins expiry.&lt;/p&gt;
+&lt;p&gt;There are three parts in JWT if you break it by periods. First part is called as JOSE (&lt;em&gt;Javascript Object Signing and Encryption&lt;/em&gt;) header, second part is the payload and the last part is the signature.&lt;/p&gt;
+&lt;p&gt;If we decode the ckns_jwt’s header, it’s an encrypted JWE. So we cannot decode the payload.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;HEADER:
+{ 
+  &amp;quot;typ&amp;quot;: &amp;quot;JWE&amp;quot;, 
+  &amp;quot;alg&amp;quot;: &amp;quot;HS256&amp;quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let’s decode the id token [ckns_idtkn].&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;HEADER:
+{
+  &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot;,
+  &amp;quot;kid&amp;quot;: &amp;quot;IsKhxoWdpCuKD+8Lx2VzFh2Plpc=&amp;quot;,
+  &amp;quot;alg&amp;quot;: &amp;quot;RS256&amp;quot;
+}
+PAYLOAD:
+{
+  &amp;quot;at_hash&amp;quot;: &amp;quot;Xeip1PZOE2VD1RAnPA8ElQ&amp;quot;,
+  &amp;quot;sub&amp;quot;: &amp;quot;6da1281b-a0c0-4854-a684-b668ad26bff9&amp;quot;,
+  &amp;quot;auditTrackingId&amp;quot;: &amp;quot;6a016323-7aeb-4e4f-929a-e587146a1951-174700412&amp;quot;,
+  &amp;quot;iss&amp;quot;: &amp;quot;https://access.api.bbc.com/bbcidv5/oauth2&amp;quot;,
+  &amp;quot;tokenName&amp;quot;: &amp;quot;id_token&amp;quot;,
+  &amp;quot;aud&amp;quot;: &amp;quot;Account&amp;quot;,
+  &amp;quot;c_hash&amp;quot;: &amp;quot;olXAhMuXUMkj35eipXHMoQ&amp;quot;,
+  &amp;quot;azp&amp;quot;: &amp;quot;Account&amp;quot;,
+  &amp;quot;auth_time&amp;quot;: 1532052036,
+  &amp;quot;realm&amp;quot;: &amp;quot;/&amp;quot;,
+  &amp;quot;exp&amp;quot;: 1532055637,
+  &amp;quot;tokenType&amp;quot;: &amp;quot;JWTToken&amp;quot;,
+  &amp;quot;iat&amp;quot;: 1532052037
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The expiration of the id token is set as 1 hour.&lt;/p&gt;
+&lt;p&gt;Let’s decode the access token [ckns_atkn].&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;HEADER:
+{
+  &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot;,
+  &amp;quot;alg&amp;quot;: &amp;quot;HS256&amp;quot;
+}
+PAYLOAD:
+{
+  &amp;quot;sub&amp;quot;: &amp;quot;6da1281b-a0c0-4854-a684-b668ad26bff9&amp;quot;,
+  &amp;quot;auditTrackingId&amp;quot;: &amp;quot;38bebceb-56a6-4fc3-8b1c-1f60108780a9&amp;quot;,
+  &amp;quot;iss&amp;quot;: &amp;quot;https://access.api.bbc.com/bbcidv5/oauth2&amp;quot;,
+  &amp;quot;tokenName&amp;quot;: &amp;quot;access_token&amp;quot;,
+  &amp;quot;token_type&amp;quot;: &amp;quot;Bearer&amp;quot;,
+  &amp;quot;authGrantId&amp;quot;: &amp;quot;efa5f9d0-cc3d-40b1-8de4-09dd1aaa7096&amp;quot;,
+  &amp;quot;aud&amp;quot;: &amp;quot;Account&amp;quot;,
+  &amp;quot;nbf&amp;quot;: 1532052037,
+  &amp;quot;scope&amp;quot;: [
+    &amp;quot;explicit&amp;quot;,
+    &amp;quot;implicit&amp;quot;,
+    &amp;quot;pii&amp;quot;,
+    &amp;quot;uid&amp;quot;,
+    &amp;quot;openid&amp;quot;
+  ],
+  &amp;quot;realm&amp;quot;: &amp;quot;/&amp;quot;,
+  &amp;quot;exp&amp;quot;: 1532059237,
+  &amp;quot;iat&amp;quot;: 1532052037,
+  &amp;quot;expires_in&amp;quot;: 7200000,
+  &amp;quot;jti&amp;quot;: &amp;quot;6332b62d-fe06-4aa5-9fa3-1cf9b1a3a221&amp;quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The expiration of the access token is set as 2 hours.&lt;/p&gt;
+&lt;p&gt;Let’s decode the refresh token [ckns_rtkn].&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;HEADER:
+{
+  &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot;,
+  &amp;quot;alg&amp;quot;: &amp;quot;HS256&amp;quot;
+}
+PAYLOAD:
+{
+  &amp;quot;sub&amp;quot;: &amp;quot;6da1281b-a0c0-4854-a684-b668ad26bff9&amp;quot;,
+  &amp;quot;auditTrackingId&amp;quot;: &amp;quot;1d639b30-fd0b-4b36-9dfa-30996644a599&amp;quot;,
+  &amp;quot;iss&amp;quot;: &amp;quot;https://access.api.bbc.com/bbcidv5/oauth2&amp;quot;,
+  &amp;quot;tokenName&amp;quot;: &amp;quot;refresh_token&amp;quot;,
+  &amp;quot;authModules&amp;quot;: &amp;quot;BBCID_EMAIL&amp;quot;,
+  &amp;quot;token_type&amp;quot;: &amp;quot;Bearer&amp;quot;,
+  &amp;quot;authGrantId&amp;quot;: &amp;quot;efa5f9d0-cc3d-40b1-8de4-09dd1aaa7096&amp;quot;,
+  &amp;quot;aud&amp;quot;: &amp;quot;Account&amp;quot;,
+  &amp;quot;nbf&amp;quot;: 1532052037,
+  &amp;quot;scope&amp;quot;: [
+    &amp;quot;explicit&amp;quot;,
+    &amp;quot;implicit&amp;quot;,
+    &amp;quot;pii&amp;quot;,
+    &amp;quot;uid&amp;quot;,
+    &amp;quot;openid&amp;quot;
+  ],
+  &amp;quot;realm&amp;quot;: &amp;quot;/&amp;quot;,
+  &amp;quot;exp&amp;quot;: 1595124037,
+  &amp;quot;iat&amp;quot;: 1532052037,
+  &amp;quot;expires_in&amp;quot;: 63072000000,
+  &amp;quot;jti&amp;quot;: &amp;quot;72352326-9fd8-4868-83a1-3959e69e4179&amp;quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The expiration of the refresh token is set as 2 years.&lt;/p&gt;
+&lt;p&gt;ckns_id cookie is an base64 encoded value, which has the information of expiry time of all these cookies.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{&amp;quot;ab&amp;quot;:&amp;quot;o18&amp;quot;,&amp;quot;ep&amp;quot;:true,&amp;quot;ev&amp;quot;:true,&amp;quot;ps&amp;quot;:&amp;quot;qgIUsDzE1xaao9UONE6M5gw9sW18EPoER2-4vodFjvM&amp;quot;,&amp;quot;ses-exp&amp;quot;:1532052937000,&amp;quot;jwt-exp&amp;quot;:1595124037000,&amp;quot;tkn-exp&amp;quot;:1532055637000,&amp;quot;rtkn-exp&amp;quot;:1595124037000}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;When we single sign on to www.bbc.co.uk/music &lt;code class=&quot;language-text&quot;&gt;ckns_session&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;ckns_jwt&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;ckns_idtkn&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;ckns_atkn&lt;/code&gt; cookies creatd in .bbc.co.uk domain and &lt;code class=&quot;language-text&quot;&gt;ckns_rtkn&lt;/code&gt; is created in .session.bbc.co.uk domain.&lt;/p&gt;
+&lt;p&gt;When the signout is clicked, below signout urls are called to clear cookies in their domain.
+&lt;a href=&quot;https://session.bbc.com/session/signout?ptrt=https://account.bbc.com/signout&amp;#x26;switchTld=1&quot;&gt;https://session.bbc.com/session/signout?ptrt=https://account.bbc.com/signout&amp;#x26;switchTld=1&lt;/a&gt;
+&lt;a href=&quot;https://session.bbc.co.uk/session/signout?ptrt=https://account.bbc.com/signout&quot;&gt;https://session.bbc.co.uk/session/signout?ptrt=https://account.bbc.com/signout&lt;/a&gt;
+&lt;a href=&quot;https://account.bbc.com/account/signout?ptrt=https://account.bbc.com/signout&quot;&gt;https://account.bbc.com/account/signout?ptrt=https://account.bbc.com/signout&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;From above study, openam domain of bbc is account.bbc.com, authentication is done through stateless openid connect and the session management &amp;#x26; cookie creation for the application domain is performed through session.bbc.com and session.bbc.co.uk respectively for the apps reside in bbc.com &amp;#x26; bbc.co.uk domain. &lt;/p&gt;
+&lt;p&gt;And for the stay login feature, refresh token timeout is set as 2 years, and it’s been used to generate new access tokens every hour.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Welcome to Ghost]]></title><description><![CDATA[👋 Welcome, it’s great to have you here.We know that first impressions are important, so we’ve populated your new site with some initial…]]></description><link>https://sphtech.github.io/welcome/</link><guid isPermaLink="false">https://sphtech.github.io/welcome/</guid><pubDate>Sun, 06 May 2018 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;👋 Welcome, it’s great to have you here.&lt;/p&gt;
+&lt;p&gt;We know that first impressions are important, so we’ve populated your new site with some initial &lt;strong&gt;getting started&lt;/strong&gt; posts that will help you get familiar with everything in no time. This is the first one!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A few things you should know upfront&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ghost is designed for ambitious, professional publishers who want to actively build a business around their content. That’s who it works best for. &lt;/li&gt;
+&lt;li&gt;The entire platform can be modified and customised to suit your needs. It’s very powerful, but does require some knowledge of code. Ghost is not necessarily a good platform for beginners or people who just want a simple personal blog. &lt;/li&gt;
+&lt;li&gt;For the best experience we recommend downloading the Ghost Desktop App for your computer, which is the best way to access your Ghost site on a desktop device. &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ghost is made by an independent non-profit organisation called the Ghost Foundation. We are 100% self funded by revenue from our Ghost(Pro) service, and every penny we make is re-invested into funding further development of free, open source technology for modern publishing.  &lt;/p&gt;
+&lt;p&gt;The version of Ghost you are looking at right now would not have been made possible without generous contributions from the open source community.  &lt;/p&gt;
+&lt;h2&gt;Next up, the editor&lt;/h2&gt;
+&lt;p&gt;The main thing you’ll want to read about next is probably: the Ghost editor. This is where the good stuff happens.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;By the way, once you’re done reading, you can simply delete the default &lt;strong&gt;Ghost&lt;/strong&gt; user from your team to remove all of these introductory posts! &lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[Video Review - Carousell Level-Up: Applying Scrum for Better Delivery]]></title><description><![CDATA[Hi all! It has been a while since some of us have gone for the Scrum training by Mr Stuart, building balloon animal zoos to learn what is…]]></description><link>https://sphtech.github.io/video-review-carousell-level-up/</link><guid isPermaLink="false">https://sphtech.github.io/video-review-carousell-level-up/</guid><pubDate>Mon, 05 Feb 2018 07:53:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi all! It has been a while since some of us have gone for the Scrum training by Mr Stuart, building balloon animal zoos to learn what is Scrum, and how to operate in a Scrum team. While I personally find the concepts he delivered enriching, some of his answers to our bread-and-butter issues seemed slightly aloof and less than motivating (for example, “some companies spend years doing Agile but still could not get it right”). Nevertheless, I believe being Agile is still the right way to go.&lt;/p&gt;
+
+          &lt;div
+            class=&quot;gatsby-resp-iframe-wrapper&quot;
+            style=&quot;padding-bottom: 56.25%; position: relative; height: 0; overflow: hidden;margin-bottom: 1rem&quot;
+          &gt;
+            &lt;iframe src=&quot;https://www.youtube.com/embed/Zd9TOnYwOHI&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen style=&quot;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          &quot;&gt;&lt;/iframe&gt;
+          &lt;/div&gt;
+          
+&lt;p&gt;However, after watching this video, the 2nd part of a 4-part series, my mind is leaping with joy, exclaiming “Yes, yes! This is the way! We should do something like that!” Below is a summary of the salient points, and my thoughts as well.&lt;/p&gt;
+&lt;h3&gt;Using the Gherkin language to write User Stories&lt;/h3&gt;
+&lt;p&gt;We have heard, that when the Product Owner generates requirements for the sprint, it is better to write user stories so as to paint a clearer and more concrete picture of what is the desired (and accepted) outcome of the requirements. However, the technique of writing user stories remains slightly vague and uncertain. In this video (from the 19:00 mark), the presenter introduced the Gherkin language, a formalised structure of writing user stories, so formalised that it can be automatically translated into programming test scripts, and tested on the final application to validate if the application has met the user story’s requirements. As an engineer, this automated human language processing/testing is thrilling!&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bd3afee0c433a8478842a91eb69b3814/5b640/simple-user-story.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 742px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 56.19946091644204%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAACpElEQVQoz22S2U8TURSH528x0figUV/EKBLUgKh1QSw+Im4xEMRgCLWlC9W4NViVTRPeNGpi9MVEYzDRB1eiaUBooXSDbthtWtppZf28M6IvOiffnHPPzfzmnHOv1NzaRnvHJRpPnuHQoVpaWi9gMJoFJswWC0aTEVNnpxbbL9vpsndhsVmxddmwifiS2LcK77h6DUN7O9KroXe8efeBtosGmprOY+y08XH4m+ArrhEXw1+H+Tz8mU9fPjI6NorH68E94cYzqaLG47iFnxSMjLqQxiYC+KbjPHryjLYLF3n46CmReJLobJJUJiV8lHAsjD/oJ1fIoT7LwlZWbVHYwvKCeC9RKBWQIj+ypHMlIRpl6O17fMEw+eIipfklVFM/VoXmlDnkOZlkJql59WcpOcX80jxLq6aUFKT+e4M4up1cv+ngxcvXeH0hevsG6Om5q1WzuLJINB7VKo0n4qL6CIlUgkgsouX+EdTp9nOsro6GhhPsra5Cr9ezcdMWzja1ovxUNJFsPksml9EqSmfTWpVqTl2rbf4RLKiCZrORc60tNDQ2cPSIjj27KugdfExgtsisEPP6vYTCIW2GU4Gpv6i5Sd+k1v6fuRbni0h2UztHq3eLU26jw9DB6VMnefHWxWwB0nJGzFMRMyyIGaoovxHrXD6vkZZlfqSSgpQYQwzp+L7dVG/egNVmx2CyiLt1hcEHzxn3JcjIebJziqC4ioKcE2TzGmmxn8rkSaSzxBIZwvEEUmX5NtavXcO+mr3UHj5Mc3MTdfp6zFY7wVBEtDpDIBTWUGNfYAZ/YBq/PygOMMiE18+4Z4qRsQlc391INTt3ULFhHfVVlRwsL6OqcjtlZVs5oNPhdN6h+9bt/+DE4eimp3eA/oH73Onpo0/4K1dv8AtNf77KztcE4wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;A 3 line user story&quot;
+        title=&quot;&quot;
+        src=&quot;/static/bd3afee0c433a8478842a91eb69b3814/5b640/simple-user-story.png&quot;
+        srcset=&quot;/static/bd3afee0c433a8478842a91eb69b3814/eb41c/simple-user-story.png 293w,
+/static/bd3afee0c433a8478842a91eb69b3814/7110a/simple-user-story.png 585w,
+/static/bd3afee0c433a8478842a91eb69b3814/5b640/simple-user-story.png 742w&quot;
+        sizes=&quot;(max-width: 742px) 100vw, 742px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;A 3 line user story&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+    &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a157980072a44aa69af8ee14f6d7d0e4/1f8c5/gherkin-user-story.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 741px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 56.14035087719298%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAACq0lEQVQoz12S2U8TURSH5x/x0T/AF2KMmhLibiBGoyASkSIJlU2UCF2UYgxRUbYGcIm8oCYGY3wxJpqo0dRWlqqFUlpoa1uotftCC7J83hnXeE++/M7M3DnLvUeqa2ym5UIbp6pOU1xyiPqGJtq0BoEe/UUDWp0OnV7wS+XnNm2b4rcbjcLXcsnYTldnJxfOnUd6/uINL169o7m5FY2mAb2hg/cfJgTjTH6cwGw1Mz45hmXMgnXMqqjZYsb2yYZrzsWMawan28ms0EnbONK008ucL8TIg1HOimrvP3zEYjjG4tcIsWSMWfcs3i9egotB3PNu/EE/DqeDYChI/nuebD7L0vISa8JS2RRS8GuCSCKH2xPg9Vur+DlIJJ4mm1thXZjH52F6Zhr7tF1hyjGFz+8jsBggHA0TT8VJpBPK3nQ2jTR0dxjT4C16+k30DwxhGbeJCuYYffyE1Y1VHLMO0fqkOIL3ilo+WJQEvytb/8fSSyLgiRNlqFTbqampoUpdRXl5GUcOH6G2rhF5yZuSmSSpTEppSfblimTk6lbWVpTEcstKQE1tNU0NZ9Bf7qC+XkNlxXFKj5Xy9NkbJaCcGTb+4++Sv8vBNoRlchmk5sZaRoZvYxDj0N5hRNdyjhaNRtysXVSUIRqPE00kfpH8qfI7QST2k2/RKOFIlMDCAlKNuoKrxlYMegMDd+6hrdOgES2/fDdBbnmVRGpJHHZetJwnmc4ppFJZkskscUEskREBk4TCcQKhCNLuokJ2qbZRVKhCra6mtrqKnQVbRIKL+AMh5j1+cdOBP8x7hXp8Cq45L06XmAKnm89TTmx2B9LR/XuoLDnIyZIDlO0tonjHVgo2b+L4vj2Yrl+nu7efm929gj66ewTCl+m60Y1JTMXg0G36TAMMCL3SeY0fntO+F4yt3zYAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;User story in Gherkin language&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a157980072a44aa69af8ee14f6d7d0e4/1f8c5/gherkin-user-story.png&quot;
+        srcset=&quot;/static/a157980072a44aa69af8ee14f6d7d0e4/eb41c/gherkin-user-story.png 293w,
+/static/a157980072a44aa69af8ee14f6d7d0e4/7110a/gherkin-user-story.png 585w,
+/static/a157980072a44aa69af8ee14f6d7d0e4/1f8c5/gherkin-user-story.png 741w&quot;
+        sizes=&quot;(max-width: 741px) 100vw, 741px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;User story in Gherkin language&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The presenter also reminded (from the 9:00 mark), that we need to take time to look at a user story, and break it down into more bite-size user stories and needs. This is to ensure that the small little components are thought through and taken care of. Do listen to the presenter’s example! A member of the audience also pointed out a feature not taken care of by the user story (24:45 mark), hence the need to also think about negative test criteria — what happens when the desired outcome does not happen. In this particular example, “what happens when Mei Ling searches for a product that is not in the inventory.” This is really a good reminder for everyone in our operations.&lt;/p&gt;
+&lt;h3&gt;“Have the movie played out in your mind”&lt;/h3&gt;
+&lt;p&gt;Another captivating concept raised by the presenter, is that for the Product Owner to steer the direction of the product, he/she should have envisioned how the end product is going to look and feel like — in the presenter’s analogy, the director having the whole movie played out in his mind before entering the studio to direct the shoot.&lt;/p&gt;
+&lt;p&gt;I agree with the presenter almost whole-heartedly, except that when we put matters into context, the Product Owner is required to please the needs of the stakeholders/funders and not just the end users. From time to time, the stakeholders can be vague in terms of what they want, expecting the Product Owner to make sense of the fuzziness and deliver the desired. Hence I feel, everyone — not just the scrum team, but also the stakeholders — can take a tip or two from the process of writing Gherkin user stories, to better communicate their needs, goals and plans to fellow colleagues. Help our Product Owners, and we can grow our products together!&lt;/p&gt;
+&lt;p&gt;In any case, this is only the 2nd parter of a 4-part series. If you have time on Thursdays, do go attend the talk and ask questions!&lt;/p&gt;</content:encoded></item></channel></rss>
